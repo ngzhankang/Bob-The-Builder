@@ -6,13 +6,22 @@ from config import PERPLEXITY_API_KEY
 client = Perplexity(api_key=PERPLEXITY_API_KEY)
 
 # catch response from telebot and GET req from perplexity
-async def get_perplexity_response(query: str, chat_history: list = None):
+async def get_perplexity_response(query: str, chat_history: list=None):
     if chat_history is None:
         chat_history = []
 
-    model=
+    messages = chat_history + [{
+        "role": "user",
+        "content": query
+    }]
 
-
-completion = client.chat.completions.create(
-    model=""
-)
+    try:
+        response = client.chat.completions.create(
+            model="sonar",
+            messages=messages,
+            stream=False
+        )
+        return response.choices[0].message.content
+    except Exception as e:
+        print(f"Error calling Perplexity API: {e}")
+        return "Sorry, I couldn't generate a response right now."
