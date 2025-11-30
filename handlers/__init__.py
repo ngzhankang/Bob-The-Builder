@@ -1,4 +1,4 @@
-# to import speicifc functions from individual handler (command) files and expose them at package level
+# to import specific functions from individual handler (command) files and expose them at package level
 from .start import start
 from .profile import profile, build_profile_conversation
 

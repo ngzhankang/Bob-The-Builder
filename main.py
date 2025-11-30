@@ -1,18 +1,28 @@
+# standard library imports
 import logging
-from telegram.ext import filters, MessageHandler, ApplicationBuilder, CommandHandler
-from config import TELE_API_KEY
 
+# third-party imports
+from telegram.ext import filters, MessageHandler, ApplicationBuilder, CommandHandler
+
+# local imports
+from config import TELE_API_KEY
 from handlers import start, build_profile_conversation
 
 
-# for logging
+# logging module config
 logging.basicConfig(
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    level=logging.INFO
+
+    format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    level = logging.INFO
+
 )   
 
+
 def main():
+
+    # initialise telegram bot
     application = ApplicationBuilder().token(TELE_API_KEY).build()
+
     start_handler = CommandHandler('start', start)
     profile_handler = build_profile_conversation()
     # echo_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), echo)
@@ -24,5 +34,7 @@ def main():
     print('Bot is running...')
     application.run_polling(poll_interval=3.0)
 
+
 if __name__ == '__main__':
+    
     main()
