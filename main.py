@@ -1,9 +1,9 @@
 import logging
-from telegram.ext import filters, MessageHandler, ApplicationBuilder, CommandHandler
+from telegram.ext import filters, MessageHandler, ApplicationBuilder, CommandHandler, CallbackQueryHandler
 from config import TELE_API_KEY
 
 from handlers import start, build_profile_conversation
-
+from handlers.profile import profile_button
 
 # for logging
 logging.basicConfig(
@@ -13,13 +13,9 @@ logging.basicConfig(
 
 def main():
     application = ApplicationBuilder().token(TELE_API_KEY).build()
-    start_handler = CommandHandler('start', start)
-    profile_handler = build_profile_conversation()
-    # echo_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), echo)
-
-    application.add_handler(start_handler)
-    application.add_handler(profile_handler)
-    # application.add_handler(echo_handler)
+    application.add_handler(CommandHandler('start', start)) # /start handler
+    application.add_handler(build_profile_conversation())   # /profile handler
+    # application.add_handler(CallbackQueryHandler(profile_button, pattern="^profile$"))
 
     print('Bot is running...')
     application.run_polling(poll_interval=3.0)
