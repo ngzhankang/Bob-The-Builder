@@ -1,7 +1,7 @@
 import json
 import os
 
-USER_DATA_FILE: "userData.json"
+USER_DATA_FILE = "userData.json"
 
 # load user data if previously recorded things such as bmi and age are inside already
 def LoadUserData():

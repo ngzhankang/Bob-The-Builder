@@ -6,14 +6,33 @@ from storeUserData import SaveUserProfile, GetUserProfile, DeleteUserProfile
 # declare params
 NAME, AGE, SEX, HEIGHT, WEIGHT, GOAL, ACTIVITY_LEVEL, DIET_STYLE, ALLERGIES, MISINFORMATION = range(10)
 
-# fixed option for user to choose in telebot
-SEX_OPTIONS = ["male", "female"]
-ACTIVITY_OPTIONS = ["sedentary", "light", "moderate", "active", "very active"]
-GOAL_OPTIONS = ["fat loss", "muscle gain", "better energy", "general health"]
-DIET_OPTIONS = ["no preference", "vegetarian", "vegan", "low-carb", "halal"]
+# fixed option for user to choose in telebot (has to be list of list)
+SEX_OPTIONS = [["male", "female"]]
+ACTIVITY_OPTIONS = [["sedentary", "light"], ["moderate", "active", "very active"]]
+GOAL_OPTIONS = [["fat loss", "muscle gain"], ["better energy", "general health"]]
+DIET_OPTIONS = [["no preference", "vegetarian"], ["vegan", "low-carb", "halal"]]
+
+# profile setup. so how it works is that it will ask user name -> age -> sex everytime user submits data
+def build_profile_conversation():
+    return ConversationHandler(
+        entry_points=[CommandHandler("profile", profile)],
+        states={
+            NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_age)],
+            AGE: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_sex)],
+            SEX: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_height)],
+            HEIGHT: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_weight)],
+            WEIGHT: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_goal)],
+            GOAL: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_activity)],
+            ACTIVITY_LEVEL: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_diet_style)],
+            DIET_STYLE: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_allergies)],
+            ALLERGIES: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_misinformation)],
+            MISINFORMATION: [MessageHandler(filters.TEXT & ~filters.COMMAND, profile_finish)]
+        },
+        fallbacks=[CommandHandler("cancel", profile_cancel)]
+    )
 
 #  start profile (or update name)
-async def profile_start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+async def profile(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     user_id = update.effective_user.id
     existing = GetUserProfile(user_id)
 
@@ -26,7 +45,6 @@ async def profile_start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> i
         )
     
     await update.message.reply_text(
-        "let's set uppp your nutrition profile before we begin!\n\n"
         "how would you like me to call you? (no problem if you dont want me to know your real name, we good!)"
     )
     return NAME
@@ -54,10 +72,11 @@ async def ask_sex(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     
     # k now ask for sex
     context.user_data["AGE"] = age
-    await update.message.reply_text(
-        "whats your gender"
-    )
     reply_markup = ReplyKeyboardMarkup(SEX_OPTIONS, one_time_keyboard=True, resize_keyboard=True)
+    await update.message.reply_text(
+        "whats your gender",
+        reply_markup=reply_markup
+    )
     return SEX
 
 # ask for height
@@ -129,7 +148,6 @@ async def ask_allergies(update: Update, context: ContextTypes.DEFAULT_TYPE) -> i
     return ALLERGIES
 
 # ask for the misinformation
-
 async def ask_misinformation(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     context.user_data["ALLERGIES"] = update.message.text.strip()
     await update.message.reply_text(
@@ -139,7 +157,6 @@ async def ask_misinformation(update: Update, context: ContextTypes.DEFAULT_TYPE)
     return MISINFORMATION
 
 # once we gather all the basic info, save it in first
-
 async def profile_finish(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     context.user_data["MISINFORMATION"] = update.message.text.strip()
 
@@ -169,6 +186,7 @@ async def profile_finish(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
     )
     return ConversationHandler.END
 
+# display the current details of the user upon request
 async def profile_view(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     # to show the current data of the user
     user_id = update.effective_user.id
@@ -194,6 +212,7 @@ async def profile_view(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     )
     await update.message.reply_text(text)
 
+# delete the profile upon request
 async def profile_delete_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_id = update.effective_user.id
     DeleteUserProfile(user_id)
@@ -201,6 +220,7 @@ async def profile_delete_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE)
         "your saved profile has been deleted. You can create a new one anytime with /profile."
     )
 
+# handler incase the user decides to quit updating profile updating/setup
 async def profile_cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     await update.message.reply_text(
         "Profile setup cancelled. Your previous data is unchanged.",
