@@ -3,10 +3,11 @@ from telegram import Update, ReplyKeyboardMarkup, ReplyKeyboardRemove
 from telegram.ext import ContextTypes, ConversationHandler, MessageHandler, CommandHandler, filters
 from storeUserData import SaveUserProfile, GetUserProfile, DeleteUserProfile
 
-# declare params
+# declare params for use later to store user data
 NAME, AGE, SEX, HEIGHT, WEIGHT, GOAL, ACTIVITY_LEVEL, DIET_STYLE, ALLERGIES, MISINFORMATION = range(10)
 
 # fixed option for user to choose in telebot (has to be list of list)
+# see docs https://docs.python-telegram-bot.org/en/stable/telegram.replykeyboardmarkup.html#telegram.ReplyKeyboardMarkup.params.keyboard
 SEX_OPTIONS = [["male", "female"]]
 ACTIVITY_OPTIONS = [["sedentary", "light"], ["moderate", "active", "very active"]]
 GOAL_OPTIONS = [["fat loss", "muscle gain"], ["better energy", "general health"]]
@@ -15,7 +16,9 @@ DIET_OPTIONS = [["no preference", "vegetarian"], ["vegan", "low-carb", "halal"]]
 # profile setup. so how it works is that it will ask user name -> age -> sex everytime user submits data
 def build_profile_conversation():
     return ConversationHandler(
-        entry_points=[CommandHandler("profile", profile)],
+        entry_points=[
+            CommandHandler("profile", profile)
+            ],
         states={
             NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_age)],
             AGE: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_sex)],
@@ -31,20 +34,37 @@ def build_profile_conversation():
         fallbacks=[CommandHandler("cancel", profile_cancel)]
     )
 
+# upon trigger from the /profile button in start for new users
+async def profile_button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    query = update.callback_query
+    if query.data == "profile":
+        # call the /profile flow entry
+        await profile(update, context)
+
 #  start profile (or update name)
 async def profile(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    # to detect if it comes from the button or from typing /profile
+    if update.message:
+        msg = update.message
+        user = update.effective_user
+    else:
+        query = update.callback_query
+        await query.answer()
+        msg = query.message
+        user = query.from_user
+
     user_id = update.effective_user.id
     existing = GetUserProfile(user_id)
 
     if existing:
-        name = existing.get("NAME") or update.effective_user.first_name
-        await update.message.reply_text(
+        name = existing.get("NAME") or user.first_name
+        await msg.reply_text(
             f"uh ohh seems like you alr got a profile liao, {name} \n\n"
             "if you want to overwrite it, we needa go through the questions again to see if we are still in sync!\n"
             "if you want to delete your saved details completely, you can use the /deleteprofile command later...(although we dont want you to go)"
         )
     
-    await update.message.reply_text(
+    await msg.reply_text(
         "how would you like me to call you? (no problem if you dont want me to know your real name, we good!)"
     )
     return NAME
@@ -229,7 +249,7 @@ async def profile_cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
     return ConversationHandler.END
 
 
-def get_profile_conversation_handler() -> ConversationHandler:
-    return ConversationHandler(
-        entry_points
-    )
+# def get_profile_conversation_handler() -> ConversationHandler:
+#     return ConversationHandler(
+#         entry_points
+#     )
