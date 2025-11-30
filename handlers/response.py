@@ -1,7 +1,7 @@
 # handles responses from perplexity
 from telegram import Update
 from telegram.ext import CallbackContext
-from perplexity_client import get_perplexity_response
+from perplexityClient import get_perplexity_response
 
 async def handle_response(update: Update, content: CallbackContext) -> None:
     user_query = update.message.text
