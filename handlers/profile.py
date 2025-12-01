@@ -4,7 +4,7 @@ from telegram.ext import ContextTypes, ConversationHandler, MessageHandler, Comm
 from storeUserData import SaveUserProfile, GetUserProfile, DeleteUserProfile
 
 # declare params for use later to store user data
-NAME, AGE, SEX, HEIGHT, WEIGHT, GOAL, ACTIVITY_LEVEL, DIET_STYLE, ALLERGIES, MISINFORMATION = range(10)
+NAME, AGE, SEX, HEIGHT, WEIGHT, GOAL, ACTIVITY_LEVEL, DIET_STYLE, ALLERGIES, MISINFORMATION, BMR, TDEE = range(12)
 
 # fixed option for user to choose in telebot (has to be list of list)
 # see docs https://docs.python-telegram-bot.org/en/stable/telegram.replykeyboardmarkup.html#telegram.ReplyKeyboardMarkup.params.keyboard
@@ -53,19 +53,28 @@ async def profile(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         msg = query.message
         user = query.from_user
 
-    user_id = update.effective_user.id
+    user_id = user.id
     existing = GetUserProfile(user_id)
 
     if existing:
         name = existing.get("NAME") or user.first_name
         await msg.reply_text(
-            f"uh ohh seems like you alr got a profile liao, {name} \n\n"
-            "if you want to overwrite it, we needa go through the questions again to see if we are still in sync!\n"
-            "if you want to delete your saved details completely, you can use the /deleteprofile command later...(although we dont want you to go)"
+            f"Seems like you have an existing profile, {name}! \n\n"
+            f"Your details:\n"
+            f"Age: {existing.get('AGE')}\n"
+            f"Sex: {existing.get('SEX')}\n"
+            f"Height: {existing.get('HEIGHT')}\n"
+            f"Weight: {existing.get('WEIGHT')}\n"
+            f"Goal: {existing.get('GOAL')}\n"
+            f"Activity Level: {existing.get('ACTIVITY_LEVEL')}\n"
+            f"Diet Style: {existing.get('DIET_STYLE')}\n"
+            f"Allergies: {existing.get('ALLERGIES')}\n\n"
+            "If you want to overwrite it, we need to go through the questions again to see if we are still in sync!\n\n"
+            "If you want to delete your saved details completely, you can use the /deleteprofile command."
         )
     
     await msg.reply_text(
-        "how would you like me to call you? (no problem if you dont want me to know your real name, we good!)"
+        "How would you like me to call you?"
     )
     return NAME
 
@@ -73,7 +82,7 @@ async def profile(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
 async def ask_age(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     context.user_data["NAME"] = update.message.text.strip()
     await update.message.reply_text(
-        "nice! how old are you (NUMBERS ONLY GRR)"
+        "And what is your age?"
     )
     return AGE
 
@@ -82,11 +91,11 @@ async def ask_sex(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     # check age first
     try:
         age = int(update.message.text.strip())
-        if not (1 <= age <= 120):
+        if not (1 <= age <= 100):
             raise ValueError
     except ValueError:
         await update.message.reply_text(
-            "that age looks abit wrong...please enter a valid age as a number"
+            "That age looks a bit wrong...please enter a valid age as a number"
         )
         return AGE
     
@@ -94,16 +103,27 @@ async def ask_sex(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     context.user_data["AGE"] = age
     reply_markup = ReplyKeyboardMarkup(SEX_OPTIONS, one_time_keyboard=True, resize_keyboard=True)
     await update.message.reply_text(
-        "whats your gender",
+        "What is your gender?\n\nAge and gender significantly impact how your body uses energy. ⚡",
         reply_markup=reply_markup
     )
     return SEX
 
 # ask for height
 async def ask_height(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    # check gender in case user types random 
+    try:
+        sex = str(update.message.text.strip())
+        if sex not in SEX_OPTIONS[0]:
+            raise ValueError
+    except ValueError:
+        await update.message.reply_text(
+            "Please choose a valid option"
+        )
+        return SEX
+    
     context.user_data["SEX"] = update.message.text.strip()
     await update.message.reply_text(
-        "whats your height in cm? (e.g. 170)",
+        "What is your height in cm? (e.g. 170)",
         reply_markup=ReplyKeyboardRemove(),
     )
     return HEIGHT
@@ -115,11 +135,13 @@ async def ask_weight(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         if not (100 <= height <= 230):
             raise ValueError
     except ValueError:
-        await update.message.reply_text("please enter a realistic height in cm, e.g. 170.")
+        await update.message.reply_text("Please enter a realistic height in cm, e.g. 170.")
         return HEIGHT
 
     context.user_data["HEIGHT"] = height
-    await update.message.reply_text("what is your weight in kg? (e.g. 65.5)")
+    await update.message.reply_text(
+        "What is your weight in kg? (e.g. 65.5)\n\nHeight and weight are used to calculate your baseline energy needs. ⚡"
+        )
     return WEIGHT
 
 # ask for the current goal
@@ -129,40 +151,70 @@ async def ask_goal(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         if not (30 <= weight <= 300):
             raise ValueError
     except ValueError:
-        await update.message.reply_text("please enter a realistic weight in kg, e.g. 65.5.")
+        await update.message.reply_text("Please enter a realistic weight in kg, e.g. 65.5.")
         return WEIGHT
 
     context.user_data["WEIGHT"] = weight
     await update.message.reply_text(
-        "What is your main goal right now?",
+        "To give you the best advice, what's your main health focus right now?",
         reply_markup=ReplyKeyboardMarkup(GOAL_OPTIONS, one_time_keyboard=True, resize_keyboard=True),
     )
     return GOAL
 
 # ask for how active the user is rn
 async def ask_activity(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
-    context.user_data["GOAL"] = update.message.text.strip()
+    # check goal in case user types random 
+    try:
+        goal = update.message.text.strip()
+        if goal not in GOAL_OPTIONS[0] and goal not in GOAL_OPTIONS[1]:
+            raise ValueError
+    except ValueError:
+        await update.message.reply_text("Please choose a valid option")
+        return GOAL
+    
+    context.user_data["GOAL"] = goal
     await update.message.reply_text(
-        "how would you describe your typical activity level?",
+        "How active are you on an average week?",
         reply_markup=ReplyKeyboardMarkup(ACTIVITY_OPTIONS, one_time_keyboard=True, resize_keyboard=True),
     )
     return ACTIVITY_LEVEL
 
 # ask for diet style
 async def ask_diet_style(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    # check activity level in case user types random 
+    try:
+        activity = update.message.text.strip()
+        if activity not in ACTIVITY_OPTIONS[0] and activity not in ACTIVITY_OPTIONS[1]:
+            raise ValueError
+    except ValueError:
+        await update.message.reply_text(
+            "Please choose a valid option"
+        )
+        return ACTIVITY_LEVEL
+    
     context.user_data["ACTIVITY_LEVEL"] = update.message.text.strip()
     await update.message.reply_text(
-        "do you follow any particular diet style?",
+        "Before I suggest a recipe in future, do you follow any specific diet, like vegetarian or keto? I want to make sure the ingredients work for you!",
         reply_markup=ReplyKeyboardMarkup(DIET_OPTIONS, one_time_keyboard=True, resize_keyboard=True),
     )
     return DIET_STYLE
 
 # ask for allergies
 async def ask_allergies(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    # check diet level in case user types random 
+    try:
+        diet = update.message.text.strip()
+        if diet not in DIET_OPTIONS[0] and diet not in DIET_OPTIONS[1]:
+            raise ValueError
+    except ValueError:
+        await update.message.reply_text(
+            "Please choose a valid option"
+        )
+        return DIET_STYLE
+    
     context.user_data["DIET_STYLE"] = update.message.text.strip()
     await update.message.reply_text(
-        "any food allergies or ingredients you must avoid? "
-        "(e.g. peanuts, shellfish, lactose; type 'none' if no allergies.)",
+        "For safety first, do you have any food allergies or intolerances I need to watch out for?",
         reply_markup=ReplyKeyboardRemove(),
     )
     return ALLERGIES
@@ -171,14 +223,30 @@ async def ask_allergies(update: Update, context: ContextTypes.DEFAULT_TYPE) -> i
 async def ask_misinformation(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     context.user_data["ALLERGIES"] = update.message.text.strip()
     await update.message.reply_text(
-        "lastly, what diet myths or nutrition claims have you seen online that "
-        "you're unsure about? You can list a few, or type 'none'."
+        "You probably see a lot of confusing trends online. What's one diet myth you're most curious about right now?"
     )
     return MISINFORMATION
 
 # once we gather all the basic info, save it in first
 async def profile_finish(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     context.user_data["MISINFORMATION"] = update.message.text.strip()
+
+    # calculate basal metabolic rate using Mifflin St-Jeor Equation
+    # see https://reference.medscape.com/calculator/846/mifflin-st-jeor-equation
+    if context.user_data["SEX"] == SEX_OPTIONS[[0]]:
+        bmr = (10*context.user_data["WEIGHT"]) +(6.25*context.user_data["HEIGHT"]) - (5*context.user_data["AGE"]) + 5
+    bmr = (10*context.user_data["WEIGHT"]) +(6.25*context.user_data["HEIGHT"]) - (5*context.user_data["AGE"]) - 161
+
+    # calculate total Daily Energy Expenditure
+    # see https://www.healthhub.sg/well-being-and-lifestyle/personal-care/healthy-weight-loss
+    # https://reference.medscape.com/calculator/846/mifflin-st-jeor-equation#
+    if content.user_data["ACTIVITY_LEVEL"] == 'sedentary':
+        tdee = bmr*1.2
+    elif content.user_data["ACTIVITY_LEVEL"] == 'light':
+        tdee = bmr*1.375
+    elif content.user_data["ACTIVITY_LEVEL"] == 'moderate' or content.user_data["ACTIVITY_LEVEL"] == 'active':
+        tdee = bmr*1.55
+    tdee = bmr*1.725
 
     user_id = update.effective_user.id
     profile = {
@@ -192,6 +260,8 @@ async def profile_finish(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
         "DIET_STYLE": context.user_data["DIET_STYLE"],
         "ALLERGIES": context.user_data["ALLERGIES"],
         "MISINFORMATION": context.user_data["MISINFORMATION"],
+        "BMR": bmr,
+        "TDEE": tdee,
     }
     SaveUserProfile(user_id, profile)
 
@@ -247,9 +317,3 @@ async def profile_cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
         reply_markup=ReplyKeyboardRemove(),
     )
     return ConversationHandler.END
-
-
-# def get_profile_conversation_handler() -> ConversationHandler:
-#     return ConversationHandler(
-#         entry_points
-#     )
