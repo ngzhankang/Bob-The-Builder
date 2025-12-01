@@ -2,9 +2,10 @@
 from telegram import Update, ReplyKeyboardMarkup, ReplyKeyboardRemove
 from telegram.ext import ContextTypes, ConversationHandler, MessageHandler, CommandHandler, filters
 from storeUserData import SaveUserProfile, GetUserProfile, DeleteUserProfile
+from menu import handle_menu_selection
 
 # declare params for use later to store user data
-NAME, AGE, SEX, HEIGHT, WEIGHT, GOAL, ACTIVITY_LEVEL, DIET_STYLE, ALLERGIES, MISINFORMATION, BMR, TDEE = range(12)
+NAME, AGE, SEX, HEIGHT, WEIGHT, GOAL, ACTIVITY_LEVEL, DIET_STYLE, ALLERGIES, MISINFORMATION, BMR, TDEE, MAIN_MENU = range(13)
 
 # fixed option for user to choose in telebot (has to be list of list)
 # see docs https://docs.python-telegram-bot.org/en/stable/telegram.replykeyboardmarkup.html#telegram.ReplyKeyboardMarkup.params.keyboard
@@ -29,7 +30,8 @@ def build_profile_conversation():
             ACTIVITY_LEVEL: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_diet_style)],
             DIET_STYLE: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_allergies)],
             ALLERGIES: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_misinformation)],
-            MISINFORMATION: [MessageHandler(filters.TEXT & ~filters.COMMAND, profile_finish)]
+            MISINFORMATION: [MessageHandler(filters.TEXT & ~filters.COMMAND, profile_finish)],
+            MAIN_MENU:  [MessageHandler(filters.TEXT & ~filters.COMMAND, handle_menu_selection)],
         },
         fallbacks=[CommandHandler("cancel", profile_cancel)]
     )
@@ -283,7 +285,7 @@ async def profile_view(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     profile = GetUserProfile(user_id)
     if not profile:
         await update.message.reply_text(
-            "seems like you haven't set up your profile yet ~ please press /profile to setup" 
+            "Seems like you haven't set up your profile yet ~ please press /profile to setup" 
         )
         return
     

@@ -2,6 +2,7 @@
 from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import ContextTypes
 from storeUserData import GetUserProfile
+from handlers.menu import show_main_menu, MAIN_MENU #import current state machine status
 
 # start message for first timer clickers in the bot
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -17,12 +18,15 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     # if the profile exists
     if existing:
         name = existing.get("NAME") or update.effective_user.first_name
-        await update.message.reply_text(
-            f"Welcome back, {name}! 👋\n\n"
-            "Don't worry, i still have your nutrition profile saved! 😃\n\n"
-            "Just to be sure, I need you to double check again before we proceed! ♥️",
-            reply_markup=markup,
-        )
+        # show main menu
+        await show_main_menu(update, context)
+        return MAIN_MENU
+        # await update.message.reply_text(
+        #     f"Welcome back, {name}! 👋\n\n"
+        #     "Don't worry, i still have your nutrition profile saved! 😃\n\n"
+        #     "Just to be sure, I need you to double check again before we proceed! ♥️",
+        #     reply_markup=markup,
+        # )
     else:
         # creates a new one if new user
         await update.message.reply_text(
