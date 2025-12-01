@@ -54,6 +54,9 @@ for page_link in driver.find_elements(By.XPATH, "//a[contains(@class, 'page-link
 # loop until max page inclusive
 for page in range(1, page_max + 1):
 
+    # query sg food id tool with page number
+    driver.get(f"https://pphtpc.hpb.gov.sg/web/sgfoodid/tools/food-search?searchText=a&pageNumber={page}")
+
 
     # FOOD RECORDS HANDLER
 
