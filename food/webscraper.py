@@ -73,7 +73,7 @@ for page in range(1, page_max + 1):
 
         # find and click table row with record name to enter record details page
         WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, f"//*[contains(text(), '{record_name}')]"))
+            EC.presence_of_element_located((By.XPATH, f"//*[contains(text(), \"{record_name}\")]"))
         ).click()
 
         # find and click button to download record as csv
