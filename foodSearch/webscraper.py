@@ -1,3 +1,11 @@
+# PREAMBLE
+
+# sg food id is a comprehensive database of the nutrition information of a large number of food in Singapore
+# unfortunately there is currently no api for our prototype to query
+# our prototype simulates a collaboration with hpb to make their food search tool more accessible
+# https://pphtpc.hpb.gov.sg/web/sgfoodid/tools/food-search
+
+
 # IMPORTS
 
 # os
