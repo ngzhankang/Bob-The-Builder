@@ -1,0 +1,30 @@
+﻿Food Name,"Soft serve ice cream"
+Description,"Soft serve vanilla ice cream served on cone"
+Food Group,"Desserts"
+Food Subgroup,"Ice confections"
+Edible Portion,"100%"
+Default Serving Size,"1 cone(s) = 103g"
+Alternative Serving Size(s),"-"
+Source of Data,"Borrowed"
+Last Updated,"2025"
+
+,Per 100g,Per Serving (103g)
+Energy (kcal),143,147
+Protein (g),3,3.09
+Total Fat (g),3.88,4
+Saturated Fat (g),1.94,2
+Trans Fat (g),0.08,0.08
+Carbohydrate (g),23.3,24
+Sugar (g),19.6,20.19
+Added Sugar (g),-,-
+Dietary Fibre (g),2.91,3
+Sodium (mg),58,60
+Potassium (mg),-,-
+Calcium (mg),149,153
+Iron (mg),0.15,0.15
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

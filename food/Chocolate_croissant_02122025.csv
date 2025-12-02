@@ -1,0 +1,30 @@
+﻿Food Name,"Chocolate croissant"
+Description,"Flaky, buttery French pastry filled with chocolate or chocolate-hazelnut spread"
+Food Group,"Snacks"
+Food Subgroup,"Pies and pastries"
+Edible Portion,"100%"
+Default Serving Size,"1 whole = 83g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100g,Per Serving (83g)
+Energy (kcal),453,376
+Protein (g),7.5,6.23
+Total Fat (g),24.7,20.5
+Saturated Fat (g),15.5,12.87
+Trans Fat (g),0.19,0.16
+Carbohydrate (g),50.2,41.67
+Sugar (g),14.9,12.37
+Added Sugar (g),-,-
+Dietary Fibre (g),1,0.83
+Sodium (mg),357,296
+Potassium (mg),-,-
+Calcium (mg),42,35
+Iron (mg),1.44,1.2
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

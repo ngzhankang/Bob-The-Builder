@@ -1,0 +1,30 @@
+﻿Food Name,"Baked chicken thigh"
+Description,"Baked chicken thigh"
+Food Group,"Poultry"
+Food Subgroup,"Chicken"
+Edible Portion,"64%"
+Default Serving Size,"1 piece(s) = 100g"
+Alternative Serving Size(s),"-"
+Source of Data,"Borrowed"
+Last Updated,"2025"
+
+,Per 100g,Per Serving (100g)
+Energy (kcal),227,145
+Protein (g),23,14.72
+Total Fat (g),15,9.6
+Saturated Fat (g),4.6,2.94
+Trans Fat (g),75.79,48.51
+Carbohydrate (g),0,0
+Sugar (g),0,0
+Added Sugar (g),-,-
+Dietary Fibre (g),0,0
+Sodium (mg),73,47
+Potassium (mg),-,-
+Calcium (mg),22,14
+Iron (mg),0.92,0.59
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

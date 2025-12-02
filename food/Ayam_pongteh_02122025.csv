@@ -1,0 +1,30 @@
+﻿Food Name,"Ayam pongteh"
+Description,"Nonya braised chicken with potato stew"
+Food Group,"Poultry"
+Food Subgroup,"Chicken-based dishes"
+Edible Portion,"60%"
+Default Serving Size,"1 scoop(s) (serving spoon) = 100g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100g,Per Serving (100g)
+Energy (kcal),175,105
+Protein (g),12.5,7.5
+Total Fat (g),12.33,7.4
+Saturated Fat (g),3.25,1.95
+Trans Fat (g),-,-
+Carbohydrate (g),3.61,2.17
+Sugar (g),0.68,0.41
+Added Sugar (g),-,-
+Dietary Fibre (g),1.09,0.65
+Sodium (mg),251,151
+Potassium (mg),-,-
+Calcium (mg),45,27
+Iron (mg),1.68,1.01
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

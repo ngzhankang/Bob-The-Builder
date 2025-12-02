@@ -1,0 +1,30 @@
+﻿Food Name,"Thin crust pizza (meat)"
+Description,"Thin crust pizza with meat toppings and cheese"
+Food Group,"Grains and staples"
+Food Subgroup,"Bread-based dishes"
+Edible Portion,"100%"
+Default Serving Size,"1 slice(s) = 52g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2023"
+
+,Per 100g,Per Serving (52g)
+Energy (kcal),310,161
+Protein (g),15.76,8.2
+Total Fat (g),15.93,8.28
+Saturated Fat (g),8.46,4.4
+Trans Fat (g),-,-
+Carbohydrate (g),25.81,13.42
+Sugar (g),1.33,0.69
+Added Sugar (g),-,-
+Dietary Fibre (g),0.9,0.47
+Sodium (mg),718,373
+Potassium (mg),-,-
+Calcium (mg),-,-
+Iron (mg),-,-
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

@@ -1,0 +1,30 @@
+﻿Food Name,"Honey toast"
+Description,"Thick-cut toast drizzled with honey"
+Food Group,"Desserts"
+Food Subgroup,"Other desserts"
+Edible Portion,"100%"
+Default Serving Size,"1 plate(s) = 314g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2018"
+
+,Per 100g,Per Serving (314g)
+Energy (kcal),289,907
+Protein (g),7.2,22.61
+Total Fat (g),11.43,35.89
+Saturated Fat (g),7.79,24.46
+Trans Fat (g),0.27,0.85
+Carbohydrate (g),39.4,123.72
+Sugar (g),14.6,45.84
+Added Sugar (g),-,-
+Dietary Fibre (g),0.6,1.88
+Sodium (mg),373,1171
+Potassium (mg),-,-
+Calcium (mg),64,201
+Iron (mg),1.19,3.74
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

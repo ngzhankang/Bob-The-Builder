@@ -1,0 +1,30 @@
+﻿Food Name,"Omurice"
+Description,"Japanese-style fried rice with ketchup and mixed vegetables, wrapped in egg omelette"
+Food Group,"Grains and staples"
+Food Subgroup,"Rice-based dishes"
+Edible Portion,"100%"
+Default Serving Size,"1 plate(s) = 340g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100g,Per Serving (340g)
+Energy (kcal),159,541
+Protein (g),6.5,22.1
+Total Fat (g),5.01,17.03
+Saturated Fat (g),1.4,4.76
+Trans Fat (g),-,-
+Carbohydrate (g),21.95,74.63
+Sugar (g),2.56,8.7
+Added Sugar (g),-,-
+Dietary Fibre (g),4.34,14.76
+Sodium (mg),220,748
+Potassium (mg),-,-
+Calcium (mg),23,78
+Iron (mg),0.3,1.02
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

@@ -1,0 +1,30 @@
+﻿Food Name,"Bacon, egg and cheese croissant"
+Description,"-"
+Food Group,"Carb-based"
+Food Subgroup,"Bread/dough-based dishes"
+Edible Portion,"100%"
+Default Serving Size,"1 whole = 123g"
+Alternative Serving Size(s),"-"
+Source of Data,"-"
+Last Updated,"-"
+
+,Per 100g,Per Serving (123g)
+Energy (kcal),301.41,371
+Protein (g),15.18,18.67
+Total Fat (g),16.85,20.73
+Saturated Fat (g),8.4,10.33
+Trans Fat (g),0.09,0.11
+Carbohydrate (g),24.15,29.7
+Sugar (g),2.59,3.19
+Added Sugar (g),-,-
+Dietary Fibre (g),0.81,1
+Sodium (mg),715.7,880
+Potassium (mg),-,-
+Calcium (mg),327.56,403
+Iron (mg),1.6,1.97
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

@@ -1,0 +1,30 @@
+﻿Food Name,"Herbal tea"
+Description,"Caffeine-free tea made from herbs, flowers, or fruit"
+Food Group,"Beverages"
+Food Subgroup,"Asian and herbal drinks"
+Edible Portion,"100%"
+Default Serving Size,"1 glass (250ml) = 265ml"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100ml,Per Serving (265ml)
+Energy (kcal),23,61
+Protein (g),0,0
+Total Fat (g),0,0
+Saturated Fat (g),0,0
+Trans Fat (g),0,0
+Carbohydrate (g),5.79,15.34
+Sugar (g),5.6,14.84
+Added Sugar (g),-,-
+Dietary Fibre (g),0,0
+Sodium (mg),1,3
+Potassium (mg),-,-
+Calcium (mg),2,5
+Iron (mg),0.08,0.21
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100ml: Nutrient data reported in the column is per 100ml edible portion
+Per serving size (ml): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100ml edible portion and per 100ml serving size if edible portion is less than 100%

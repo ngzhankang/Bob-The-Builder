@@ -1,0 +1,30 @@
+﻿Food Name,"Cereal drink"
+Description,"Powdered beverage made from grains"
+Food Group,"Beverages"
+Food Subgroup,"Cereal drinks"
+Edible Portion,"100%"
+Default Serving Size,"1 cup (200ml) = 200ml"
+Alternative Serving Size(s),"-"
+Source of Data,"NIP"
+Last Updated,"2025"
+
+,Per 100ml,Per Serving (200ml)
+Energy (kcal),60,120
+Protein (g),1.24,2.48
+Total Fat (g),1.44,2.88
+Saturated Fat (g),0.58,1.16
+Trans Fat (g),6.02,12.04
+Carbohydrate (g),10.46,20.92
+Sugar (g),4.25,8.5
+Added Sugar (g),-,-
+Dietary Fibre (g),1.03,2.06
+Sodium (mg),37,74
+Potassium (mg),-,-
+Calcium (mg),30,60
+Iron (mg),0.54,1.08
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100ml: Nutrient data reported in the column is per 100ml edible portion
+Per serving size (ml): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100ml edible portion and per 100ml serving size if edible portion is less than 100%

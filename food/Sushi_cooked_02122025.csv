@@ -1,0 +1,30 @@
+﻿Food Name,"Sushi (cooked)"
+Description,"Sushi rice, topped with cooked seafood"
+Food Group,"Grains and staples"
+Food Subgroup,"Rice-based dishes"
+Edible Portion,"100%"
+Default Serving Size,"1 piece(s) = 35g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100g,Per Serving (35g)
+Energy (kcal),144,50
+Protein (g),5.75,2.01
+Total Fat (g),1.33,0.47
+Saturated Fat (g),0.22,0.08
+Trans Fat (g),0,0
+Carbohydrate (g),27.18,9.51
+Sugar (g),4.16,1.46
+Added Sugar (g),-,-
+Dietary Fibre (g),1.46,0.51
+Sodium (mg),472,165
+Potassium (mg),-,-
+Calcium (mg),26,9
+Iron (mg),0.13,0.05
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

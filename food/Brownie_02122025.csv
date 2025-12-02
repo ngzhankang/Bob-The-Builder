@@ -1,0 +1,30 @@
+﻿Food Name,"Brownie"
+Description,"Chocolate dessert made with cocoa, butter, sugar and eggs"
+Food Group,"Desserts"
+Food Subgroup,"Cakes"
+Edible Portion,"100%"
+Default Serving Size,"1 piece(s) = 56g"
+Alternative Serving Size(s),"-"
+Source of Data,"Borrowed"
+Last Updated,"2025"
+
+,Per 100g,Per Serving (56g)
+Energy (kcal),405,227
+Protein (g),4.8,2.69
+Total Fat (g),16.3,9.13
+Saturated Fat (g),4.2,2.35
+Trans Fat (g),1.3,0.73
+Carbohydrate (g),61.8,34.61
+Sugar (g),36.6,20.5
+Added Sugar (g),-,-
+Dietary Fibre (g),2.1,1.18
+Sodium (mg),257,144
+Potassium (mg),-,-
+Calcium (mg),29,16
+Iron (mg),2.3,1.29
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

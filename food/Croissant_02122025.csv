@@ -1,0 +1,30 @@
+﻿Food Name,"Croissant"
+Description,"Crescent-shaped, buttery, flaky, viennoiserie pastry"
+Food Group,"Snacks"
+Food Subgroup,"Pies and pastries"
+Edible Portion,"100%"
+Default Serving Size,"1 whole = 50g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100g,Per Serving (50g)
+Energy (kcal),429,215
+Protein (g),8.7,4.35
+Total Fat (g),21.6,10.8
+Saturated Fat (g),13.29,6.65
+Trans Fat (g),0.36,0.18
+Carbohydrate (g),55.7,27.85
+Sugar (g),3.7,1.85
+Added Sugar (g),-,-
+Dietary Fibre (g),2,1
+Sodium (mg),411,206
+Potassium (mg),-,-
+Calcium (mg),33,17
+Iron (mg),0.4,0.2
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

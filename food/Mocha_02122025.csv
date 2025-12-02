@@ -1,0 +1,30 @@
+﻿Food Name,"Mocha"
+Description,"Beverage made with steamed full cream milk, espresso and chocolate syrup"
+Food Group,"Beverages"
+Food Subgroup,"Coffee"
+Edible Portion,"100%"
+Default Serving Size,"1 medium cup (350ml) = 350ml"
+Alternative Serving Size(s),"1 small cup (250ml) = 250ml, 1 large cup (500ml) = 500ml"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100ml,Per Serving (350ml)
+Energy (kcal),68,238
+Protein (g),2.29,8.02
+Total Fat (g),2.13,7.46
+Saturated Fat (g),1.34,4.69
+Trans Fat (g),0.02,0.07
+Carbohydrate (g),9.5,33.25
+Sugar (g),8.3,29.05
+Added Sugar (g),-,-
+Dietary Fibre (g),1.44,5.04
+Sodium (mg),32,112
+Potassium (mg),-,-
+Calcium (mg),50,175
+Iron (mg),0.84,2.94
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100ml: Nutrient data reported in the column is per 100ml edible portion
+Per serving size (ml): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100ml edible portion and per 100ml serving size if edible portion is less than 100%

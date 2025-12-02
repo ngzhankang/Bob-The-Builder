@@ -1,0 +1,30 @@
+﻿Food Name,"Milkshake"
+Description,"Thick beverage made with blended ice cream and milk"
+Food Group,"Beverages"
+Food Subgroup,"Dairy-based drinks"
+Edible Portion,"100%"
+Default Serving Size,"1 medium cup (400ml) = 400ml"
+Alternative Serving Size(s),"1 small cup (250ml) = 250ml"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100ml,Per Serving (400ml)
+Energy (kcal),56,224
+Protein (g),1.25,5
+Total Fat (g),2.64,10.56
+Saturated Fat (g),1.48,5.92
+Trans Fat (g),0,0
+Carbohydrate (g),6.86,27.44
+Sugar (g),6.08,24.32
+Added Sugar (g),-,-
+Dietary Fibre (g),0.48,1.92
+Sodium (mg),23,92
+Potassium (mg),-,-
+Calcium (mg),38,152
+Iron (mg),0.3,1.2
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100ml: Nutrient data reported in the column is per 100ml edible portion
+Per serving size (ml): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100ml edible portion and per 100ml serving size if edible portion is less than 100%

@@ -1,0 +1,30 @@
+﻿Food Name,"Potato, red, raw"
+Description,"Raw red potato, red-skinned white vegetable, firm texture with mild starchy taste."
+Food Group,"Vegetables"
+Food Subgroup,"Starchy vegetables"
+Edible Portion,"85%"
+Default Serving Size,"1 whole (medium) = 213g"
+Alternative Serving Size(s),"1 cup(s) = 150g, 1 whole (small) = 170g, 1 whole (large) = 369g"
+Source of Data,"Borrowed"
+Last Updated,"2025"
+
+,Per 100g,Per Serving (213g)
+Energy (kcal),70,127
+Protein (g),1.89,3.42
+Total Fat (g),0.14,0.25
+Saturated Fat (g),0.04,0.07
+Trans Fat (g),0,0
+Carbohydrate (g),15.9,28.79
+Sugar (g),1.29,2.34
+Added Sugar (g),-,-
+Dietary Fibre (g),1.7,3.08
+Sodium (mg),18,33
+Potassium (mg),455,824
+Calcium (mg),10,18
+Iron (mg),0.73,1.32
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

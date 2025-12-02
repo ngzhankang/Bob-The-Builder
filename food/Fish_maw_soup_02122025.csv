@@ -1,0 +1,30 @@
+﻿Food Name,"Fish maw soup"
+Description,"Chinese-style clear soup with rehydrated fish maw, mushrooms, and crab meat"
+Food Group,"Fish and seafood"
+Food Subgroup,"Fish-based dishes"
+Edible Portion,"100%"
+Default Serving Size,"1 bowl(s) = 450g"
+Alternative Serving Size(s),"1 claypot(s) = 693g"
+Source of Data,"Lab Analysis"
+Last Updated,"2024"
+
+,Per 100g,Per Serving (450g)
+Energy (kcal),48,216
+Protein (g),4.67,21.02
+Total Fat (g),2.22,9.99
+Saturated Fat (g),0.89,4.01
+Trans Fat (g),-,-
+Carbohydrate (g),2.38,10.71
+Sugar (g),1.44,6.48
+Added Sugar (g),-,-
+Dietary Fibre (g),0.62,2.79
+Sodium (mg),426,1917
+Potassium (mg),-,-
+Calcium (mg),-,-
+Iron (mg),-,-
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

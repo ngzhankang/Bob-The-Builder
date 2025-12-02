@@ -1,0 +1,30 @@
+﻿Food Name,"Strawberry shortcake"
+Description,"Light sponge cake layered with fresh strawberries and cream"
+Food Group,"Desserts"
+Food Subgroup,"Cakes"
+Edible Portion,"100%"
+Default Serving Size,"1 slice(s) = 141g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100g,Per Serving (141g)
+Energy (kcal),217,306
+Protein (g),3.1,4.37
+Total Fat (g),14.23,20.06
+Saturated Fat (g),9.34,13.17
+Trans Fat (g),0.24,0.34
+Carbohydrate (g),19.2,27.07
+Sugar (g),11.5,16.22
+Added Sugar (g),-,-
+Dietary Fibre (g),2,2.82
+Sodium (mg),52,73
+Potassium (mg),-,-
+Calcium (mg),43,61
+Iron (mg),0.77,1.09
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

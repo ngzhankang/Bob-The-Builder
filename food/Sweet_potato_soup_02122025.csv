@@ -1,0 +1,30 @@
+﻿Food Name,"Sweet potato soup"
+Description,"Sweet potato boiled with rock sugar soup"
+Food Group,"Desserts"
+Food Subgroup,"Soup desserts"
+Edible Portion,"100%"
+Default Serving Size,"1 bowl(s) = 300g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100g,Per Serving (300g)
+Energy (kcal),62,186
+Protein (g),0.6,1.8
+Total Fat (g),0.1,0.3
+Saturated Fat (g),0,0
+Trans Fat (g),-,-
+Carbohydrate (g),14.8,44.4
+Sugar (g),6.6,19.8
+Added Sugar (g),-,-
+Dietary Fibre (g),1.9,5.7
+Sodium (mg),9,27
+Potassium (mg),-,-
+Calcium (mg),8,24
+Iron (mg),0.5,1.5
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

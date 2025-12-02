@@ -1,0 +1,30 @@
+﻿Food Name,"Cheeseburger"
+Description,"Burger bun with beef patty, pickled vegetable, sliced cheese and tomato sauce"
+Food Group,"Grains and staples"
+Food Subgroup,"Bread-based dishes"
+Edible Portion,"100%"
+Default Serving Size,"1 burger(s) = 185g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2023"
+
+,Per 100g,Per Serving (185g)
+Energy (kcal),291,538
+Protein (g),15.5,28.68
+Total Fat (g),17,31.45
+Saturated Fat (g),9.51,17.59
+Trans Fat (g),-,-
+Carbohydrate (g),18.9,34.96
+Sugar (g),4.92,9.1
+Added Sugar (g),-,-
+Dietary Fibre (g),1.71,3.16
+Sodium (mg),490,907
+Potassium (mg),-,-
+Calcium (mg),-,-
+Iron (mg),-,-
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

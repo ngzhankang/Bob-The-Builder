@@ -1,0 +1,30 @@
+﻿Food Name,"Strawberry"
+Description,"Bright red berry with seeds, sweet and juicy when ripe"
+Food Group,"Fruit"
+Food Subgroup,"Fresh fruit"
+Edible Portion,"97%"
+Default Serving Size,"1 piece(s) = 12g"
+Alternative Serving Size(s),"-"
+Source of Data,"Borrowed"
+Last Updated,"2025"
+
+,Per 100g,Per Serving (12g)
+Energy (kcal),32,4
+Protein (g),0.67,0.08
+Total Fat (g),0.3,0.03
+Saturated Fat (g),0.01,Trace
+Trans Fat (g),0,0
+Carbohydrate (g),7.68,0.89
+Sugar (g),4.89,0.57
+Added Sugar (g),-,-
+Dietary Fibre (g),2,0.23
+Sodium (mg),1,Trace
+Potassium (mg),-,-
+Calcium (mg),16,2
+Iron (mg),0.41,0.05
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

@@ -1,0 +1,30 @@
+﻿Food Name,"Pig's stomach soup"
+Description,"Soup, with boiled pig's stomach, peppercorns and ginger"
+Food Group,"Meat and alternatives"
+Food Subgroup,"Pork-based dishes"
+Edible Portion,"100%"
+Default Serving Size,"1 bowl(s) = 450g"
+Alternative Serving Size(s),"1 claypot(s) = 732g"
+Source of Data,"Lab Analysis"
+Last Updated,"2024"
+
+,Per 100g,Per Serving (450g)
+Energy (kcal),52,234
+Protein (g),6.75,30.38
+Total Fat (g),1.85,8.33
+Saturated Fat (g),0.85,3.83
+Trans Fat (g),0,0
+Carbohydrate (g),1.91,8.59
+Sugar (g),0.7,3.15
+Added Sugar (g),-,-
+Dietary Fibre (g),0.15,0.68
+Sodium (mg),296,1332
+Potassium (mg),-,-
+Calcium (mg),16,72
+Iron (mg),0.48,2.16
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%
