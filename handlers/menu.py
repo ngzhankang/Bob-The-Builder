@@ -9,7 +9,8 @@ from perplexityClient import run_fact_check_pipeline, get_snack_recommendations,
 # menu buttons for the main landing page
 MENU_BUTTONS = [
     ["🥗 What should I eat?", "⚡ Fix my Energy"],
-    ["🔍 Fact Check Trend", "👤 My Stats"]
+    ["🔍 Fact Check Trend", "👤 My Stats"],
+    ["🧪 Nutritional Information"]
 ]
 
 menu_keyboard = ReplyKeyboardMarkup(MENU_BUTTONS, one_time_keyboard=True, resize_keyboard=True)
@@ -62,6 +63,8 @@ async def handle_menu_selection(update: Update, context: ContextTypes.DEFAULT_TY
         return MAIN_MENU
     elif text == "👤 My Stats":
         return await show_stats(update, context)
+    # elif text == "🧪 Nutritional Information":
+    #     return await info(update, context)
     else:
         await update.message.reply_text("Sorry, I didn't understand that. Please select an option from the menu.")
         return MAIN_MENU
@@ -165,3 +168,4 @@ async def universal_cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -
         "Back to main menu. Please choose an option:",
         reply_markup=menu_keyboard
     )
+    return MAIN_MENU
