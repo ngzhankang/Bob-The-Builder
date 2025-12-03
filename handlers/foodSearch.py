@@ -11,7 +11,10 @@ from re import findall
 
 # telegram
 from telegram import Update
-from telegram.ext import CommandHandler, ContextTypes, ConversationHandler, MessageHandler, filters
+from telegram.ext import CallbackQueryHandler, CommandHandler, ContextTypes, ConversationHandler, MessageHandler, filters
+
+# ./handlers/states.py
+from handlers.states import *
 
 
 # FOOD DATA
@@ -33,7 +36,7 @@ food_names = food_data.keys()
 
 # CONVERSATION HANDLER
 
-WAITING_SELECT = range(1)
+WAITING_QUERY, WAITING_SELECT = range(2)
 
 def build_food_search_conversation() -> ConversationHandler:
     """Defines conversation entry points and states."""
@@ -41,33 +44,42 @@ def build_food_search_conversation() -> ConversationHandler:
     return ConversationHandler(
         allow_reentry=True,
         entry_points=[
+            MessageHandler(filters.Regex("^🧪 Nutritional Information$") & ~filters.COMMAND, info),
             CommandHandler("info", info)
         ],
         fallbacks=[
             CommandHandler("cancel", cancel)
         ],
         states={
-            WAITING_SELECT: [MessageHandler(filters.TEXT & ~filters.COMMAND, food_search)]
+            WAITING_QUERY: [MessageHandler(filters.TEXT & ~filters.COMMAND, search_food)],
+            WAITING_SELECT: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_nut_data)]
         }
     )
 
 async def info(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    """Entry point for getting nutritional data of food through /info command."""
+
+    await update.message.reply_text(
+        "What food's nutritional information would you like to search for?",
+        reply_markup=None
+    )
+    return WAITING_QUERY
+
+async def search_food(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     """Shows food name matches from the user's query."""
 
-    # get command arguments
-    args = context.args
+    # get user query
+    query = update.message.text.strip()
 
     # validate command arguments
-    if not args:
+    if not query:
 
         await update.message.reply_text(
-            "Use  `/info <food>`  to search for the nutritional information of any food!",
-            parse_mode="MARKDOWN"
+            "Sorry, I didn't quite catch that! What food's nutritional information would you like to search for?",
         )
-        return ConversationHandler.END
+        return WAITING_QUERY
 
     # use fuzzy search to find top five likely matches
-    query = " ".join(args)
     matches = process.extract(query, food_names, scorer=fuzz.WRatio, limit=5)
 
     # only keep matches with scores above a threshold of 75.0
@@ -96,7 +108,7 @@ async def info(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     # update state to waiting on user to select
     return WAITING_SELECT
 
-async def food_search(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+async def get_nut_data(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     """Validates user selection and queries nutritional information."""
 
     # get matches from context user data
