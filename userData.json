@@ -14,5 +14,21 @@
         "HYDRATION_CHECK": 3.5,
         "BMR": 1532.5,
         "TDEE": 2375.375
+    },
+    "664709563": {
+        "NAME": "Bob",
+        "AGE": 69,
+        "SEX": "male",
+        "HEIGHT": 169.0,
+        "WEIGHT": 69.0,
+        "GOAL": "muscle gain",
+        "ACTIVITY_LEVEL": "moderate",
+        "DIET_STYLE": "no preference",
+        "ALLERGIES": "NA",
+        "SLUMP_CHECK": "no",
+        "MORNING_KICK": "ready to go",
+        "HYDRATION_CHECK": 2.0,
+        "BMR": 1406.25,
+        "TDEE": 2179.6875
     }
 }

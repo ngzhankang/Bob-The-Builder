@@ -90,6 +90,8 @@ async def run_fact_check_pipeline(update: Update, context: ContextTypes.DEFAULT_
         2. **Actionable** - "Try this instead", "This fits your diet because..."
         3. **Engaging** - Casual tone, questions, emojis ✅❌, but NO bold/italics. Keep it plain text.
 
+        If no direct evidence is found in given sources, state the scientific consensus clearly without disclaimers.
+
         Respond conversationally like: "Hey {name}, about that brown sugar claim... ❌ Here's what fits YOUR goals better:". NO citations. NO meal pushes. NO bold/italics.
     """.format(
         name=name, age=age, sex=sex, height=height, weight=weight,
