@@ -1,0 +1,30 @@
+﻿Food Name,"Chicken pau"
+Description,"Bun filled with minced chicken meat, steamed"
+Food Group,"Grains and staples"
+Food Subgroup,"Bread-based dishes"
+Edible Portion,"100%"
+Default Serving Size,"1 whole = 67g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2023"
+
+,Per 100g,Per Serving (67g)
+Energy (kcal),235,157
+Protein (g),8.87,5.94
+Total Fat (g),7.44,4.98
+Saturated Fat (g),2.89,1.94
+Trans Fat (g),-,-
+Carbohydrate (g),33.18,22.23
+Sugar (g),10.31,6.91
+Added Sugar (g),-,-
+Dietary Fibre (g),1.84,1.23
+Sodium (mg),378,253
+Potassium (mg),-,-
+Calcium (mg),-,-
+Iron (mg),-,-
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

@@ -1,0 +1,30 @@
+﻿Food Name,"Cherry"
+Description,"Small round red fruit with single pit, smooth glossy skin and sweet red flesh"
+Food Group,"Fruit"
+Food Subgroup,"Fresh fruit"
+Edible Portion,"90%"
+Default Serving Size,"1 handful(s) = 60g"
+Alternative Serving Size(s),"-"
+Source of Data,"Borrowed"
+Last Updated,"2025"
+
+,Per 100g,Per Serving (60g)
+Energy (kcal),63,34
+Protein (g),1.06,0.57
+Total Fat (g),0.2,0.11
+Saturated Fat (g),0.04,0.02
+Trans Fat (g),-,-
+Carbohydrate (g),16.01,8.65
+Sugar (g),12.82,6.92
+Added Sugar (g),-,-
+Dietary Fibre (g),2.1,1.13
+Sodium (mg),0,0
+Potassium (mg),-,-
+Calcium (mg),13,7
+Iron (mg),0.36,0.19
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

@@ -1,0 +1,30 @@
+﻿Food Name,"Kueh lapis"
+Description,"Indonesian layered cake made with butter, egg, sugar and flour"
+Food Group,"Desserts"
+Food Subgroup,"Cakes"
+Edible Portion,"100%"
+Default Serving Size,"1 piece(s) = 50g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100g,Per Serving (50g)
+Energy (kcal),475,238
+Protein (g),8,4
+Total Fat (g),33.8,16.9
+Saturated Fat (g),20.9,10.45
+Trans Fat (g),0.29,0.15
+Carbohydrate (g),34.6,17.3
+Sugar (g),-,-
+Added Sugar (g),-,-
+Dietary Fibre (g),1.2,0.6
+Sodium (mg),319,160
+Potassium (mg),-,-
+Calcium (mg),33,17
+Iron (mg),1.2,0.6
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

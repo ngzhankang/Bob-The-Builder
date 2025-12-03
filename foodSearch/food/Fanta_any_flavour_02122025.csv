@@ -1,0 +1,30 @@
+﻿Food Name,"Fanta (any flavour)"
+Description,"Carbonated fruit-flavoured soft drink available in various flavours"
+Food Group,"Beverages"
+Food Subgroup,"Soft drinks"
+Edible Portion,"100%"
+Default Serving Size,"1 can = 320ml"
+Alternative Serving Size(s),"1 bottle = 500ml"
+Source of Data,"NIP"
+Last Updated,"2025"
+
+,Per 100ml,Per Serving (320ml)
+Energy (kcal),47,150
+Protein (g),0,0
+Total Fat (g),0,0
+Saturated Fat (g),0,0
+Trans Fat (g),0,0
+Carbohydrate (g),11.09,35.49
+Sugar (g),11.09,35.49
+Added Sugar (g),-,-
+Dietary Fibre (g),0,0
+Sodium (mg),3,10
+Potassium (mg),-,-
+Calcium (mg),0,0
+Iron (mg),0,0
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100ml: Nutrient data reported in the column is per 100ml edible portion
+Per serving size (ml): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100ml edible portion and per 100ml serving size if edible portion is less than 100%

@@ -1,0 +1,30 @@
+﻿Food Name,"Salad (3 toppings)"
+Description,"Mixed fresh vegetables with choice of three toppings and dressing"
+Food Group,"Mixed"
+Food Subgroup,"Customisable mixed dishes"
+Edible Portion,"100%"
+Default Serving Size,"1 bowl(s) = 288g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2018"
+
+,Per 100g,Per Serving (288g)
+Energy (kcal),61,176
+Protein (g),1.58,4.55
+Total Fat (g),4.3,12.38
+Saturated Fat (g),0.6,1.73
+Trans Fat (g),0.01,0.03
+Carbohydrate (g),3.86,11.12
+Sugar (g),3.52,10.14
+Added Sugar (g),-,-
+Dietary Fibre (g),1.56,4.49
+Sodium (mg),232,668
+Potassium (mg),-,-
+Calcium (mg),36,104
+Iron (mg),0.74,2.13
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

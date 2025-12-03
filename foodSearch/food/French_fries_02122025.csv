@@ -1,0 +1,30 @@
+﻿Food Name,"French fries"
+Description,"Deep-fried potato strips"
+Food Group,"Vegetables"
+Food Subgroup,"Starchy vegetable-based dishes"
+Edible Portion,"100%"
+Default Serving Size,"1 medium packet(s) = 115g"
+Alternative Serving Size(s),"1 small packet(s) = 80g, 1 large packet(s) = 150g"
+Source of Data,"Lab Analysis"
+Last Updated,"2023"
+
+,Per 100g,Per Serving (115g)
+Energy (kcal),331,381
+Protein (g),3.98,4.58
+Total Fat (g),17.95,20.64
+Saturated Fat (g),7.57,8.71
+Trans Fat (g),-,-
+Carbohydrate (g),38.32,44.07
+Sugar (g),0.64,0.74
+Added Sugar (g),-,-
+Dietary Fibre (g),2.88,3.31
+Sodium (mg),453,521
+Potassium (mg),-,-
+Calcium (mg),-,-
+Iron (mg),-,-
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

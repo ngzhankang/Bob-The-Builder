@@ -1,0 +1,30 @@
+﻿Food Name,"2 in 1 coffee (milk, no sugar)"
+Description,"Instant coffee premixed with creamer, without added sugar"
+Food Group,"Beverages"
+Food Subgroup,"Coffee"
+Edible Portion,"100%"
+Default Serving Size,"1 cup (200ml) = 200ml"
+Alternative Serving Size(s),"-"
+Source of Data,"NIP"
+Last Updated,"2025"
+
+,Per 100ml,Per Serving (200ml)
+Energy (kcal),45,90
+Protein (g),0.52,1.04
+Total Fat (g),1.98,3.96
+Saturated Fat (g),1.95,3.9
+Trans Fat (g),20.61,41.22
+Carbohydrate (g),6.58,13.16
+Sugar (g),2.83,5.66
+Added Sugar (g),-,-
+Dietary Fibre (g),0.1,0.2
+Sodium (mg),27,54
+Potassium (mg),-,-
+Calcium (mg),0,0
+Iron (mg),0,0
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100ml: Nutrient data reported in the column is per 100ml edible portion
+Per serving size (ml): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100ml edible portion and per 100ml serving size if edible portion is less than 100%

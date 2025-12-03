@@ -1,0 +1,30 @@
+﻿Food Name,"Pork chop spaghetti"
+Description,"Pork chop with tomato spaghetti"
+Food Group,"Grains and staples"
+Food Subgroup,"Noodle/Pasta-based dishes"
+Edible Portion,"100%"
+Default Serving Size,"1 plate(s) = 406g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2018"
+
+,Per 100g,Per Serving (406g)
+Energy (kcal),113,459
+Protein (g),8.44,34.27
+Total Fat (g),4.4,17.86
+Saturated Fat (g),1.84,7.47
+Trans Fat (g),0,0
+Carbohydrate (g),9.82,39.87
+Sugar (g),2.16,8.77
+Added Sugar (g),-,-
+Dietary Fibre (g),0.88,3.57
+Sodium (mg),312,1267
+Potassium (mg),-,-
+Calcium (mg),22,89
+Iron (mg),0.52,2.11
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

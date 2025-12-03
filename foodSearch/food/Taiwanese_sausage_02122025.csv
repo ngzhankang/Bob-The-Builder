@@ -1,0 +1,30 @@
+﻿Food Name,"Taiwanese sausage"
+Description,"Sausage made with pork meat, grilled"
+Food Group,"Meat and alternatives"
+Food Subgroup,"Processed meats"
+Edible Portion,"100%"
+Default Serving Size,"1 piece(s) = 55g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100g,Per Serving (55g)
+Energy (kcal),360,198
+Protein (g),15.6,8.58
+Total Fat (g),27.1,14.91
+Saturated Fat (g),12.51,6.88
+Trans Fat (g),-,-
+Carbohydrate (g),13.5,7.43
+Sugar (g),6.7,3.69
+Added Sugar (g),-,-
+Dietary Fibre (g),Trace,Trace
+Sodium (mg),624,343
+Potassium (mg),-,-
+Calcium (mg),6,3
+Iron (mg),0.6,0.33
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

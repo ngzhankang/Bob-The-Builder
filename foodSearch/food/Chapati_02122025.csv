@@ -1,0 +1,30 @@
+﻿Food Name,"Chapati"
+Description,"Indian unleavened flat bread"
+Food Group,"Grains and staples"
+Food Subgroup,"Breads and flatbreads"
+Edible Portion,"100%"
+Default Serving Size,"1 piece(s) = 50g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2023"
+
+,Per 100g,Per Serving (50g)
+Energy (kcal),269,135
+Protein (g),8.11,4.06
+Total Fat (g),5.64,2.82
+Saturated Fat (g),2.32,1.16
+Trans Fat (g),-,-
+Carbohydrate (g),46.47,23.24
+Sugar (g),2.83,1.42
+Added Sugar (g),-,-
+Dietary Fibre (g),4.19,2.1
+Sodium (mg),72,36
+Potassium (mg),-,-
+Calcium (mg),-,-
+Iron (mg),-,-
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

@@ -2,6 +2,7 @@
 from .start import start
 from .profile import profile, profile_handlers
 from .menu import show_main_menu, handle_menu_selection, menu_handlers, universal_cancel
+from .foodSearch import build_food_search_conversation
 
 # dictate what all means
 # so for example if a user types from handlers import *, this dictates what * means.
@@ -13,4 +14,6 @@ __all__ = [
     'universal_cancel',
     'handle_menu_selection',
     'menu_handlers'
+    'build_profile_conversation',
+    'build_food_search_conversation'
 ]

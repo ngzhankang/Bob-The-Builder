@@ -1,0 +1,30 @@
+﻿Food Name,"Chicken bolognese"
+Description,"Boiled spaghetti pasta served with minced chicken and tomato sauce"
+Food Group,"Grains and staples"
+Food Subgroup,"Noodle/Pasta-based dishes"
+Edible Portion,"100%"
+Default Serving Size,"1 plate(s) = 542g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100g,Per Serving (542g)
+Energy (kcal),126,683
+Protein (g),5.74,31.11
+Total Fat (g),5.4,29.27
+Saturated Fat (g),0.92,4.99
+Trans Fat (g),0.01,0.05
+Carbohydrate (g),12.77,69.21
+Sugar (g),3.74,20.27
+Added Sugar (g),-,-
+Dietary Fibre (g),1.75,9.49
+Sodium (mg),255,1382
+Potassium (mg),-,-
+Calcium (mg),20,108
+Iron (mg),0.89,4.82
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

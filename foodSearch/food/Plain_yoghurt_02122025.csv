@@ -1,0 +1,30 @@
+﻿Food Name,"Plain yoghurt"
+Description,"Dairy product produced by bacterial fermentation of milk"
+Food Group,"Dairy and eggs"
+Food Subgroup,"Yogurt"
+Edible Portion,"100%"
+Default Serving Size,"1 small cup(s) = 150g"
+Alternative Serving Size(s),"-"
+Source of Data,"Borrowed"
+Last Updated,"2025"
+
+,Per 100g,Per Serving (150g)
+Energy (kcal),73,110
+Protein (g),4.7,7.05
+Total Fat (g),3.4,5.1
+Saturated Fat (g),2.2,3.3
+Trans Fat (g),0.03,0.05
+Carbohydrate (g),4.7,7.05
+Sugar (g),0,0
+Added Sugar (g),-,-
+Dietary Fibre (g),Trace,Trace
+Sodium (mg),55,83
+Potassium (mg),-,-
+Calcium (mg),171,257
+Iron (mg),0.1,0.15
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

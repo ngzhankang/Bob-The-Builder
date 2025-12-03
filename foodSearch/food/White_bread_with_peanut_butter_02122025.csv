@@ -1,0 +1,30 @@
+﻿Food Name,"White bread with peanut butter"
+Description,"-"
+Food Group,"Carb-based"
+Food Subgroup,"Bread/dough-based dishes"
+Edible Portion,"100%"
+Default Serving Size,"1 slice(s) = 29g"
+Alternative Serving Size(s),"-"
+Source of Data,"-"
+Last Updated,"-"
+
+,Per 100g,Per Serving (29g)
+Energy (kcal),315.53,92
+Protein (g),12.58,3.65
+Total Fat (g),10.75,3.12
+Saturated Fat (g),2.63,0.76
+Trans Fat (g),0,0
+Carbohydrate (g),43.02,12.48
+Sugar (g),5.86,1.7
+Added Sugar (g),-,-
+Dietary Fibre (g),3.11,0.9
+Sodium (mg),440.01,128
+Potassium (mg),-,-
+Calcium (mg),185.44,54
+Iron (mg),4.95,1.44
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

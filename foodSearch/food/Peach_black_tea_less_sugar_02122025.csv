@@ -1,0 +1,30 @@
+﻿Food Name,"Peach black tea (less sugar)"
+Description,"Freshly brewed black tea with peach flavouring, lower sugar level and customisable topping"
+Food Group,"Beverages"
+Food Subgroup,"Speciality tea"
+Edible Portion,"100%"
+Default Serving Size,"1 medium cup (500ml) = 500ml"
+Alternative Serving Size(s),"1 large cup (700ml) = 700ml"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100ml,Per Serving (500ml)
+Energy (kcal),43,215
+Protein (g),0.01,0.05
+Total Fat (g),0,0
+Saturated Fat (g),0,0
+Trans Fat (g),0,0
+Carbohydrate (g),8.26,41.3
+Sugar (g),8.26,41.3
+Added Sugar (g),-,-
+Dietary Fibre (g),0.03,0.15
+Sodium (mg),1,5
+Potassium (mg),-,-
+Calcium (mg),1,5
+Iron (mg),0.07,0.35
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100ml: Nutrient data reported in the column is per 100ml edible portion
+Per serving size (ml): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100ml edible portion and per 100ml serving size if edible portion is less than 100%

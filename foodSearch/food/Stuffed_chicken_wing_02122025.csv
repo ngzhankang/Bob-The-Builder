@@ -1,0 +1,30 @@
+﻿Food Name,"Stuffed chicken wing"
+Description,"Deboned chicken wing stuffed with minced meat and spices"
+Food Group,"Poultry"
+Food Subgroup,"Chicken-based dishes"
+Edible Portion,"88%"
+Default Serving Size,"1 piece(s) = 58g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100g,Per Serving (58g)
+Energy (kcal),201,103
+Protein (g),17.9,9.14
+Total Fat (g),11.9,6.07
+Saturated Fat (g),4.26,2.17
+Trans Fat (g),0.05,0.03
+Carbohydrate (g),5.5,2.81
+Sugar (g),1.1,0.56
+Added Sugar (g),-,-
+Dietary Fibre (g),1.6,0.82
+Sodium (mg),437,223
+Potassium (mg),-,-
+Calcium (mg),13,7
+Iron (mg),1,0.51
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

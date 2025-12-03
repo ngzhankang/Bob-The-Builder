@@ -1,0 +1,30 @@
+﻿Food Name,"Ice teh o limau"
+Description,"Beverage made with iced tea with sugar and calamansi"
+Food Group,"Beverages"
+Food Subgroup,"Tea and related drinks"
+Edible Portion,"100%"
+Default Serving Size,"1 glass (250ml) = 250ml"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100ml,Per Serving (250ml)
+Energy (kcal),31,78
+Protein (g),0.21,0.53
+Total Fat (g),0.16,0.4
+Saturated Fat (g),-,-
+Trans Fat (g),-,-
+Carbohydrate (g),7.14,17.85
+Sugar (g),6.58,16.45
+Added Sugar (g),-,-
+Dietary Fibre (g),0.6,1.5
+Sodium (mg),1,3
+Potassium (mg),-,-
+Calcium (mg),11,28
+Iron (mg),0.06,0.15
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100ml: Nutrient data reported in the column is per 100ml edible portion
+Per serving size (ml): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100ml edible portion and per 100ml serving size if edible portion is less than 100%

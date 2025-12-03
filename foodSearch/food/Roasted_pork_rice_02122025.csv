@@ -1,0 +1,30 @@
+﻿Food Name,"Roasted pork rice"
+Description,"Roasted pork served with rice and sauce"
+Food Group,"Grains and staples"
+Food Subgroup,"Rice-based dishes"
+Edible Portion,"100%"
+Default Serving Size,"1 plate(s) = 303g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2023"
+
+,Per 100g,Per Serving (303g)
+Energy (kcal),208,630
+Protein (g),8.22,24.91
+Total Fat (g),8.61,26.09
+Saturated Fat (g),2.91,8.82
+Trans Fat (g),-,-
+Carbohydrate (g),25.15,76.2
+Sugar (g),1.03,3.12
+Added Sugar (g),-,-
+Dietary Fibre (g),1.22,3.7
+Sodium (mg),291,882
+Potassium (mg),-,-
+Calcium (mg),-,-
+Iron (mg),-,-
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

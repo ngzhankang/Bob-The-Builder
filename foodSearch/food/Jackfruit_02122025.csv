@@ -1,0 +1,30 @@
+﻿Food Name,"Jackfruit"
+Description,"Large oval spiky fruit with sweet yellow flesh pods"
+Food Group,"Fruit"
+Food Subgroup,"Fresh fruit"
+Edible Portion,"100%"
+Default Serving Size,"1 piece(s) = 23g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100g,Per Serving (23g)
+Energy (kcal),78,18
+Protein (g),0.4,0.09
+Total Fat (g),0.2,0.05
+Saturated Fat (g),0.08,0.02
+Trans Fat (g),0,0
+Carbohydrate (g),18.6,4.28
+Sugar (g),15.3,3.52
+Added Sugar (g),-,-
+Dietary Fibre (g),2,0.46
+Sodium (mg),16,4
+Potassium (mg),-,-
+Calcium (mg),15,3
+Iron (mg),0.4,0.09
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

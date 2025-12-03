@@ -1,0 +1,30 @@
+﻿Food Name,"Steamed mussel"
+Description,"Steamed shellfish with blue-black shell and orange-yellow meat"
+Food Group,"Fish and seafood"
+Food Subgroup,"Seafood"
+Edible Portion,"40%"
+Default Serving Size,"1 whole (medium) = 16g"
+Alternative Serving Size(s),"1 whole (small) = 10g, 1 whole (large) = 20g"
+Source of Data,"Borrowed"
+Last Updated,"2025"
+
+,Per 100g,Per Serving (16g)
+Energy (kcal),172,11
+Protein (g),23.8,1.52
+Total Fat (g),4.48,0.29
+Saturated Fat (g),0.85,0.05
+Trans Fat (g),-,-
+Carbohydrate (g),7.39,0.47
+Sugar (g),-,-
+Added Sugar (g),-,-
+Dietary Fibre (g),0,0
+Sodium (mg),369,24
+Potassium (mg),268,17
+Calcium (mg),33,2
+Iron (mg),6.72,0.43
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%
