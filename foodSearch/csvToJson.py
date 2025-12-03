@@ -48,13 +48,14 @@ def csv_to_dict(path_csv):
         row[0] = row[0].strip()
 
         # format both per 100ml and per serving data
+        data[row[0]] = {}
         for i in (1, 2):
 
             # handle missing data or dashes as null
             row[i] = float(row[i].strip()) if row[i].replace(".", "", 1).isdigit() else None
 
             # store into data dict
-            data[row[0]] = {header[i]: row[i]}
+            data[row[0]][header[i]] = row[i]
 
     # combine metadata and nutritional data
     json_data = metadata
