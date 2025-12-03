@@ -6,6 +6,9 @@ import json
 # rapidfuzz
 from rapidfuzz import process, fuzz
 
+# re
+from re import findall
+
 # telegram
 from telegram import Update
 from telegram.ext import CommandHandler, ContextTypes, ConversationHandler, MessageHandler, filters
@@ -117,8 +120,23 @@ async def food_search(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int
         )
         return WAITING_SELECT
 
+    # get nutritional data of food
     nut_data = food_data[matches[i]]["Nutritional Data"]
-    await update.message.reply_text(nut_data, parse_mode="MARKDOWN")
+
+    # get serving size
+    serving_size = food_data[matches[i]]["Default Serving Size"].split(" ")[-1]
+
+    # add amount of each nutrient into message
+    msg = f"*{matches[i].title()}*\n\n`{'Per':<17} 100{findall(r'[a-z]+', serving_size)[0]:<4} Serving`\n"
+    for key, value in nut_data.items():
+
+        # handle none values
+        amounts = list(value.values())
+        amounts = [amount if amount != None else "" for amount in amounts]
+
+        msg += f"`{key:<17} {amounts[0]:<7} {amounts[1]}`\n"
+
+    await update.message.reply_text(msg, parse_mode="MARKDOWN")
     return ConversationHandler.END
 
 async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
