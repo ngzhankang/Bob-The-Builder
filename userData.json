@@ -1,30 +1,18 @@
 {
     "859694747": {
-        "NAME": "Bobby",
-        "AGE": 23,
+        "NAME": "bobby",
+        "AGE": 22,
         "SEX": "male",
         "HEIGHT": 166.0,
-        "WEIGHT": 57.7,
-        "GOAL": "muscle gain",
-        "ACTIVITY_LEVEL": "sedentary",
+        "WEIGHT": 60.0,
+        "GOAL": "general health",
+        "ACTIVITY_LEVEL": "active",
         "DIET_STYLE": "no preference",
-        "ALLERGIES": "Na",
-        "MISINFORMATION": "Na",
-        "BMR": 1504.5,
-        "TDEE": 1805.3999999999999
-    },
-    "664709563": {
-        "NAME": "Bob",
-        "AGE": 69,
-        "SEX": "male",
-        "HEIGHT": 169.0,
-        "WEIGHT": 69.0,
-        "GOAL": "muscle gain",
-        "ACTIVITY_LEVEL": "sedentary",
-        "DIET_STYLE": "no preference",
-        "ALLERGIES": "NA",
-        "MISINFORMATION": "Is creatine healthy?",
-        "BMR": 1406.25,
-        "TDEE": 1687.5
+        "ALLERGIES": "na",
+        "SLUMP_CHECK": "yes",
+        "MORNING_KICK": "groggy",
+        "HYDRATION_CHECK": 3.5,
+        "BMR": 1532.5,
+        "TDEE": 2375.375
     }
 }

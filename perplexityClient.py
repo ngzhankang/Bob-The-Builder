@@ -57,6 +57,9 @@ async def run_fact_check_pipeline(update: Update, context: ContextTypes.DEFAULT_
     allergies = profile.get("ALLERGIES", "") if profile else ""
     bmr = profile.get("BMR", "") if profile else ""
     tdee = profile.get("TDEE", "") if profile else ""
+    slump_check = profile.get("SLUMP_CHECK", "") if profile else ""
+    morning_kick = profile.get("MORNING_KICK", "") if profile else ""
+    hydration = profile.get("HYDRATION_CHECK", "") if profile else ""
 
     # tokenize
     tokens = tokenize_and_filter(claim)
@@ -74,6 +77,9 @@ async def run_fact_check_pipeline(update: Update, context: ContextTypes.DEFAULT_
         - Age: {age}. Sex: {sex}, Height: {height}cm, Weight: {weight}kg
         - Goal: {goal}, Activity Level: {activity_level}, Diet: {diet_style}
         - Allergies: {allergies}, BMR: {bmr}, TDEE: {tdee}
+        - User often feel a 'crash' or low energy in the mid-afternoon? (around 2-4 PM): {slump_check}
+        - User feels {morning_kick} when he/she wakes up.
+        - Daily plain water consumption in LITRES: {hydration} 
 
         **3 SENTENCES MAX.**Fact-check this claim using ONLY the search query. Verdict on "{claim}" using "{search_query}". NO questions. NO meal suggestions. NO citations. Plain text + emojis only. NO bold/italics.:
         1. Verdict ✅❌ + 1 sentence why
@@ -88,7 +94,9 @@ async def run_fact_check_pipeline(update: Update, context: ContextTypes.DEFAULT_
     """.format(
         name=name, age=age, sex=sex, height=height, weight=weight,
         goal=goal, activity_level=activity_level, diet_style=diet_style,
-        allergies=allergies, bmr=bmr, tdee=tdee, claim=claim, search_query=search_query
+        allergies=allergies, bmr=bmr, tdee=tdee, slump_check = slump_check, 
+        morning_kick = morning_kick, hydration = hydration,
+        claim=claim, search_query=search_query
     )
 
     factcheck_messages = [
@@ -116,28 +124,154 @@ async def run_fact_check_pipeline(update: Update, context: ContextTypes.DEFAULT_
 
 
 
+# handlers/menu.py for fix_my_energy()
+async def get_snack_recommendations(snack_list: str, profile) -> str:
+    # extract user details first, with fallbacks
+    name = profile.get("NAME", "friend") if profile else "friend"
+    age = profile.get("AGE", "unknown") if profile else "unknown"
+    sex = profile.get("SEX", "") if profile else ""
+    height = profile.get("HEIGHT", "") if profile else ""
+    weight = profile.get("WEIGHT", "") if profile else ""
+    goal = profile.get("GOAL", "") if profile else ""
+    activity_level = profile.get("ACTIVITY_LEVEL", "") if profile else ""
+    diet_style = profile.get("DIET_STYLE", "") if profile else ""
+    allergies = profile.get("ALLERGIES", "") if profile else ""
+    bmr = profile.get("BMR", "") if profile else ""
+    tdee = profile.get("TDEE", "") if profile else ""
+    slump_check = profile.get("SLUMP_CHECK", "") if profile else ""
+    morning_kick = profile.get("MORNING_KICK", "") if profile else ""
+    hydration = profile.get("HYDRATION_CHECK", "") if profile else ""
+    
+    
+    energyFix_prompt = """
+        You are a friendly, conversational nutrition coach advising {name} with these details:
+        - Age: {age}, Sex: {sex}, Height: {height} cm, Weight: {weight} kg
+        - Goal: {goal}, Activity Level: {activity_level}, Diet: {diet_style}
+        - Allergies: {allergies}, BMR: {bmr}, TDEE: {tdee}
+        - Afternoon energy crash: {slump_check}
+        - Morning feeling: {morning_kick}
+        - Daily water intake in liters: {hydration}
+
+        From the following list of snacks, pick exactly 3 options best suited for {name}'s goals and profile to help maintain stable energy levels during the afternoon slump. Use plain text and emojis only. Do NOT include questions, meal suggestions, citations, or any markdown formatting.
+
+        Snacks list:
+        {snack_list}
+
+        Format your response exactly like this — a numbered list with the following pattern for each snack:
+
+        1. [Food Name] ([kcal] kcal, [protein]g protein) - [a brief explanation of how it helps stabilize energy]
+
+        Make the explanations:
+        - Personalized, referencing the user's profile (e.g., "With your {goal} goal...")
+        - Actionable and practical (e.g., "Try this instead...", "Fits your {diet_style} diet...")
+        - Casual and friendly in tone with appropriate emojis ✅❌
+
+        Example response style:
+
+        1. Apple slices (95 kcal, 1g protein) - The fiber slows sugar absorption, helping keep your energy steady ✅
+        2. Greek yogurt (120 kcal, 10g protein) - Provides slow-digesting protein to avoid afternoon crashes 🍽️
+        3. Almonds (170 kcal, 6g protein) - Healthy fats and protein keep you full and energized without spikes ⚡
+
+        Remember: NO citations, NO meal plans, NO bold or italics. Just clear, helpful snack choices.
+
+        Respond now with the numbered list tailored to {name}.
+        """.format(
+            name=name, age=age, sex=sex, height=height, weight=weight,
+            goal=goal, activity_level=activity_level, diet_style=diet_style,
+            allergies=allergies, bmr=bmr, tdee=tdee, slump_check = slump_check, 
+            morning_kick = morning_kick, hydration = hydration, snack_list = snack_list
+        )
+    
+    messages = [{"role": "user", "content": energyFix_prompt}]
+    response = await asyncio.to_thread(
+        client.chat.completions.create,
+        model="sonar-pro",
+        messages=messages,
+        temperature=0.1
+    )
+    return response.choices[0].message.content
 
 
 
+# handlers/menu.py for suggest_meal()
+async def get_meal_recommendations(snack_list: str, profile, meal_type, budget) -> str:
+    # extract user details first, with fallbacks
+    name = profile.get("NAME", "friend") if profile else "friend"
+    age = profile.get("AGE", "unknown") if profile else "unknown"
+    sex = profile.get("SEX", "") if profile else ""
+    height = profile.get("HEIGHT", "") if profile else ""
+    weight = profile.get("WEIGHT", "") if profile else ""
+    goal = profile.get("GOAL", "") if profile else ""
+    activity_level = profile.get("ACTIVITY_LEVEL", "") if profile else ""
+    diet_style = profile.get("DIET_STYLE", "") if profile else ""
+    allergies = profile.get("ALLERGIES", "") if profile else ""
+    bmr = profile.get("BMR", "") if profile else ""
+    tdee = profile.get("TDEE", "") if profile else ""
+    slump_check = profile.get("SLUMP_CHECK", "") if profile else ""
+    morning_kick = profile.get("MORNING_KICK", "") if profile else ""
+    hydration = profile.get("HYDRATION_CHECK", "") if profile else ""
 
+    # meal rules
+    if meal_type == "breakfast":
+        rules = """BREAKFAST ONLY: Kaya toast, eggs, porridge, cereal, fruits, milk, yoghurt, kopi/teh. 
+NO satay, Thai milk tea, laksa, desserts, heavy hawker food."""
+    elif meal_type == "lunch":
+        rules = "LUNCH: Rice/noodles + protein (chicken/fish) + vegetables."
+    elif meal_type == "dinner":
+        rules = "DINNER: Balanced rice/noodles + protein + veg/soup."
+    else:  # snack
+        rules = "SNACK: Nuts, yoghurt, fruits, light bread."
 
-# catch response from telebot and GET req from perplexity
-# async def get_perplexity_response(query: str, chat_history: list=None):
-#     if chat_history is None:
-#         chat_history = []
+    meal_prompt = """
+    You are a friendly, conversational nutrition coach helping {name} with these details:
+    - Age: {age}, Sex: {sex}, Height: {height} cm, Weight: {weight} kg
+    - Goal: {goal}, Activity Level: {activity_level}, Diet: {diet_style}
+    - Allergies: {allergies}, BMR: {bmr}, TDEE: {tdee}
+    - Afternoon energy crash: {slump_check}
+    - Morning feeling: {morning_kick}
+    - Daily water intake in liters: {hydration}
 
-#     messages = chat_history + [{
-#         "role": "user",
-#         "content": query
-#     }]
+    **{rules}**
 
-#     try:
-#         response = client.chat.completions.create(
-#             model="sonar",
-#             messages=messages,
-#             stream=False
-#         )
-#         return response.choices[0].message.content
-#     except Exception as e:
-#         print(f"Error calling Perplexity API: {e}")
-#         return "Sorry, I couldn't generate a response right now."
+    From the following HPB Singapore foods, create exactly 1 balanced {meal_type} meal with approximately {budget} kcal total.
+
+    Guidelines:
+    - Prioritize Singapore hawker-style foods with practical portion sizes.
+    - Avoid foods that conflict with {diet_style} and {allergies}.
+    - Use clear, plain text and emojis only.
+    - Do NOT include meal plans, questions, citations, bold, or italics.
+    - Provide concise nutritional values and a short, personalized explanation.
+
+    Format your response EXACTLY like this:
+
+    [Food1] + [Food2] + [Food3] = {budget} kcal  
+    ✅ Protein: [g]g | Carbs: [g]g | Fat: [g]g  
+    Why it’s perfect for {goal}: [1 sentence]
+
+    Example:
+
+    Chicken rice (half portion) + steamed vegetables + clear soup = 650 kcal  
+    ✅ Protein: 35g | Carbs: 80g | Fat: 20g  
+    Balanced hawker meal tailored for muscle gain and energy stability.
+
+    Remember: NO citations, NO meal plans, NO bold or italics.
+
+    Respond now with only the numbered list as specified.
+    """.format(
+        name=name, age=age, sex=sex, height=height, weight=weight,
+        goal=goal, activity_level=activity_level, diet_style=diet_style,
+        allergies=allergies, bmr=bmr, tdee=tdee, slump_check = slump_check, 
+        morning_kick = morning_kick, hydration = hydration, snack_list = snack_list, 
+        meal_type = meal_type, budget = budget, rules=rules
+    )
+        
+    messages = [{"role": "user", "content": meal_prompt}]
+    response = await asyncio.to_thread(
+        client.chat.completions.create,
+        model="sonar-pro",
+        messages=messages,
+        temperature=0.3,
+        max_tokens=300,
+        extra_body={"include_citations": False}
+    )
+    return response.choices[0].message.content.strip()
