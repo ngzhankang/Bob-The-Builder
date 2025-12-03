@@ -2,10 +2,7 @@
 from telegram import Update, ReplyKeyboardMarkup, ReplyKeyboardRemove
 from telegram.ext import ContextTypes, ConversationHandler, MessageHandler, CommandHandler, filters
 from storeUserData import SaveUserProfile, GetUserProfile, DeleteUserProfile
-from menu import handle_menu_selection
-
-# declare params for use later to store user data
-NAME, AGE, SEX, HEIGHT, WEIGHT, GOAL, ACTIVITY_LEVEL, DIET_STYLE, ALLERGIES, MISINFORMATION, BMR, TDEE, MAIN_MENU = range(13)
+from handlers.states import *
 
 # fixed option for user to choose in telebot (has to be list of list)
 # see docs https://docs.python-telegram-bot.org/en/stable/telegram.replykeyboardmarkup.html#telegram.ReplyKeyboardMarkup.params.keyboard
@@ -14,8 +11,9 @@ ACTIVITY_OPTIONS = [["sedentary", "light"], ["moderate", "active", "very active"
 GOAL_OPTIONS = [["fat loss", "muscle gain"], ["better energy", "general health"]]
 DIET_OPTIONS = [["no preference", "vegetarian"], ["vegan", "low-carb", "halal"]]
 
-# profile setup. so how it works is that it will ask user name -> age -> sex everytime user submits data
-def build_profile_conversation():
+# profile setup. acts like a state machine
+def profile_handlers():
+    from handlers import universal_cancel
     return ConversationHandler(
         entry_points=[
             CommandHandler("profile", profile)
@@ -31,9 +29,10 @@ def build_profile_conversation():
             DIET_STYLE: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_allergies)],
             ALLERGIES: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_misinformation)],
             MISINFORMATION: [MessageHandler(filters.TEXT & ~filters.COMMAND, profile_finish)],
-            MAIN_MENU:  [MessageHandler(filters.TEXT & ~filters.COMMAND, handle_menu_selection)],
+            # MAIN_MENU:  [MessageHandler(filters.TEXT & ~filters.COMMAND, handle_menu_selection)],
+            AWAITING_EDIT_CONFIRMATION:  [MessageHandler(filters.TEXT & ~filters.COMMAND, await_edit_confirmation)]
         },
-        fallbacks=[CommandHandler("cancel", profile_cancel)]
+        fallbacks=[CommandHandler("cancel", universal_cancel)]
     )
 
 # upon trigger from the /profile button in start for new users
@@ -71,14 +70,27 @@ async def profile(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
             f"Activity Level: {existing.get('ACTIVITY_LEVEL')}\n"
             f"Diet Style: {existing.get('DIET_STYLE')}\n"
             f"Allergies: {existing.get('ALLERGIES')}\n\n"
-            "If you want to overwrite it, we need to go through the questions again to see if we are still in sync!\n\n"
-            "If you want to delete your saved details completely, you can use the /deleteprofile command."
+            "If you want to overwrite it, click on the /edit command!\n\n"
+            "If you accidentally pressed edit, you can use the /cancel command.\n\n"
+            "If you want to delete your saved details completely, you can use the /deleteprofile command.",
+            reply_markup=ReplyKeyboardMarkup([["/edit ✔️", "/cancel ❌"]], one_time_keyboard=True, resize_keyboard=True)
         )
+        return AWAITING_EDIT_CONFIRMATION
     
-    await msg.reply_text(
-        "How would you like me to call you?"
-    )
-    return NAME
+    else:
+        await msg.reply_text("How would you like me to call you?")
+        return NAME
+    
+# function to check if user really wants to edit profile
+async def await_edit_confirmation(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    text = update.message.text.strip().lower()
+    if "/edit" in text:
+        await update.message.reply_text("How would you like me to call you?")
+        return NAME
+    else:
+        from handlers.menu import show_main_menu
+        await show_main_menu(update, context)
+        return ConversationHandler.END
 
 # ask for age
 async def ask_age(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
@@ -235,20 +247,22 @@ async def profile_finish(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
 
     # calculate basal metabolic rate using Mifflin St-Jeor Equation
     # see https://reference.medscape.com/calculator/846/mifflin-st-jeor-equation
-    if context.user_data["SEX"] == SEX_OPTIONS[[0]]:
+    if context.user_data["SEX"].lower() == "male":
         bmr = (10*context.user_data["WEIGHT"]) +(6.25*context.user_data["HEIGHT"]) - (5*context.user_data["AGE"]) + 5
-    bmr = (10*context.user_data["WEIGHT"]) +(6.25*context.user_data["HEIGHT"]) - (5*context.user_data["AGE"]) - 161
+    else:
+        bmr = (10*context.user_data["WEIGHT"]) +(6.25*context.user_data["HEIGHT"]) - (5*context.user_data["AGE"]) - 161
 
     # calculate total Daily Energy Expenditure
     # see https://www.healthhub.sg/well-being-and-lifestyle/personal-care/healthy-weight-loss
     # https://reference.medscape.com/calculator/846/mifflin-st-jeor-equation#
-    if content.user_data["ACTIVITY_LEVEL"] == 'sedentary':
+    if context.user_data["ACTIVITY_LEVEL"] == 'sedentary':
         tdee = bmr*1.2
-    elif content.user_data["ACTIVITY_LEVEL"] == 'light':
+    elif context.user_data["ACTIVITY_LEVEL"] == 'light':
         tdee = bmr*1.375
-    elif content.user_data["ACTIVITY_LEVEL"] == 'moderate' or content.user_data["ACTIVITY_LEVEL"] == 'active':
+    elif context.user_data["ACTIVITY_LEVEL"] == 'moderate' or content.user_data["ACTIVITY_LEVEL"] == 'active':
         tdee = bmr*1.55
-    tdee = bmr*1.725
+    else:
+        tdee = bmr*1.725
 
     user_id = update.effective_user.id
     profile = {
@@ -268,6 +282,7 @@ async def profile_finish(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
     SaveUserProfile(user_id, profile)
 
     # once successful, assure user that i got this
+    from handlers.menu import show_main_menu, menu_keyboard
     await update.message.reply_text(
         "Thanks! Your nutrition profile is saved ✅\n\n"
         "From now on, I’ll use this info to:\n"
@@ -276,7 +291,8 @@ async def profile_finish(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
         "• Help you fact-check the myths you mentioned.\n\n"
         "You can update this anytime with /profile."
     )
-    return ConversationHandler.END
+    await show_main_menu(update, context)
+    return MAIN_MENU
 
 # display the current details of the user upon request
 async def profile_view(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -311,11 +327,3 @@ async def profile_delete_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE)
     await update.message.reply_text(
         "your saved profile has been deleted. You can create a new one anytime with /profile."
     )
-
-# handler incase the user decides to quit updating profile updating/setup
-async def profile_cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
-    await update.message.reply_text(
-        "Profile setup cancelled. Your previous data is unchanged.",
-        reply_markup=ReplyKeyboardRemove(),
-    )
-    return ConversationHandler.END
