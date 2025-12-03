@@ -115,10 +115,6 @@ async def run_fact_check_pipeline(update: Update, context: ContextTypes.DEFAULT_
 # ===
 
 
-# ===
-# handlers/menu.py for 
-
-# ===
 
 
 

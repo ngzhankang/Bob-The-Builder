@@ -66,7 +66,7 @@ async def fact_check_input(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "healthhub.sg", "moh.gov.sg", "cdc.gov", "thelancet.com",
             "healthxchange.sg", "skh.com.sg", "gleneagles.com.sg", "sgh.gov.sg", "hsa.gov.sg", "activesgcircle.gov.sg", "healthiersg.gov.sg",
             "nlb.gov.sg", "snda.org.sg", "asiaone.com", "todayonline.com", "kkh.com.sg", "rafflesmedicalgroup.com", "who.int", "nhs.uk", "cochrane.org",
-            "harvard.edu", "nice.org.uk", "pubmed.ncbi.nlm.nih.gov"
+            "harvard.edu", "nice.org.uk", "pubmed.ncbi.nlm.nih.gov", 'examine.com', 'nih.gov', 'sportsnutritionsociety.org', 'mayoclinic.org', 'mayoclinic.org'
         ]
         from perplexityClient import run_fact_check_pipeline
         await run_fact_check_pipeline(update, context, claim, trusted_sites, menu_keyboard)
