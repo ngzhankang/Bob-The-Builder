@@ -140,3 +140,4 @@ async def universal_cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -
         "Back to main menu. Please choose an option:",
         reply_markup=menu_keyboard
     )
+    return MAIN_MENU

@@ -30,7 +30,7 @@ def profile_handlers():
             ALLERGIES: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_misinformation)],
             MISINFORMATION: [MessageHandler(filters.TEXT & ~filters.COMMAND, profile_finish)],
             # MAIN_MENU:  [MessageHandler(filters.TEXT & ~filters.COMMAND, handle_menu_selection)],
-            AWAITING_EDIT_CONFIRMATION:  [MessageHandler(filters.TEXT & ~filters.COMMAND, await_edit_confirmation)]
+            AWAITING_EDIT_CONFIRMATION:  [MessageHandler(filters.TEXT & filters.COMMAND, await_edit_confirmation)]
         },
         fallbacks=[CommandHandler("cancel", universal_cancel)]
     )
