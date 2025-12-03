@@ -13,7 +13,8 @@ from re import findall
 from telegram import Update
 from telegram.ext import CallbackQueryHandler, CommandHandler, ContextTypes, ConversationHandler, MessageHandler, filters
 
-# ./handlers/states.py
+# ./handlers
+from handlers.menu import *
 from handlers.states import *
 
 
@@ -148,7 +149,7 @@ async def get_nut_data(update: Update, context: ContextTypes.DEFAULT_TYPE) -> in
 
         msg += f"`{key:<17} {amounts[0]:<7} {amounts[1]}`\n"
 
-    await update.message.reply_text(msg, parse_mode="MARKDOWN")
+    await update.message.reply_text(msg, parse_mode="MARKDOWN", reply_markup=menu_keyboard)
     return ConversationHandler.END
 
 async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
@@ -156,6 +157,7 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
 
     await update.message.reply_text(
             f"Cancelled. Use  `/info <food>`  if you'd like to search again!",
-            parse_mode="MARKDOWN"
+            parse_mode="MARKDOWN",
+            reply_markup=menu_keyboard
         )
     return ConversationHandler.END

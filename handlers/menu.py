@@ -2,7 +2,6 @@
 from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import ContextTypes, MessageHandler, filters, ConversationHandler, CommandHandler
 from storeUserData import GetUserProfile
-from handlers.foodSearch import *
 from handlers.states import *
 from perplexityClient import run_fact_check_pipeline
 
@@ -92,8 +91,8 @@ async def handle_menu_selection(update: Update, context: ContextTypes.DEFAULT_TY
         return MAIN_MENU
     elif text == "👤 My Stats":
         return await show_stats(update, context)
-    elif text == "🧪 Nutritional Information":
-        return await info(update, context)
+    # elif text == "🧪 Nutritional Information":
+    #     return await info(update, context)
     else:
         await update.message.reply_text("Sorry, I didn't understand that. Please select an option from the menu.")
         return MAIN_MENU
