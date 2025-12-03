@@ -3,8 +3,8 @@ from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import ContextTypes, MessageHandler, filters, ConversationHandler, CommandHandler
 from storeUserData import GetUserProfile
 from handlers.states import *
-from handlers.energy import diagnose_energy, get_user_snacks
-from perplexityClient import run_fact_check_pipeline, get_snack_recommendations
+from handlers.energy import diagnose_energy, get_user_snacks, calculate_meal_budget, get_meal_candidates
+from perplexityClient import run_fact_check_pipeline, get_snack_recommendations, get_meal_recommendations
 
 # menu buttons for the main landing page
 MENU_BUTTONS = [
@@ -15,20 +15,6 @@ MENU_BUTTONS = [
 menu_keyboard = ReplyKeyboardMarkup(MENU_BUTTONS, one_time_keyboard=True, resize_keyboard=True)
 cancel_keyboard = ReplyKeyboardMarkup([["/cancel ❌"]], one_time_keyboard=True, resize_keyboard=True)
 
-# # use defined states inside conversationhandler
-# def build_main_menu_conversation(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     return ConversationHandler(
-#         entry_points=[
-#             CommandHandler('menu', show_main_menu)],
-#         states={
-#             # WHAT_TO_EAT: [MessageHandler(filters.TEXT & ~filters.COMMAND, text_message_handler)]
-#             # FIX_ENERGY: [MessageHandler(filters.TEXT & ~filters.COMMAND, fix_energy)],
-#             MAIN_MENU: [MessageHandler(filters.TEXT & ~filters.COMMAND, handle_menu_selection)],
-#             FACT_CHECK: [MessageHandler(filters.TEXT & ~filters.COMMAND, text_message_handler)],
-#         },
-#         fallbacks=[CommandHandler('cancel', universal_cancel)]
-#     )
-
 # handles all buttons from menu and what to do next
 def menu_handlers():
     return [
@@ -37,20 +23,7 @@ def menu_handlers():
         MessageHandler(filters.TEXT & ~filters.COMMAND, fact_check_input),
         MessageHandler(filters.TEXT & ~filters.COMMAND, handle_menu_selection)
     ]
-    text = update.message.text
-
-    # if text == "🥗 What should I eat?":
-    #     await suggest_meal(update, context)
-    # elif text == "⚡ Fix my Energy":
-    #     await fix_energy(update, context)
-    # elif text == "🔍 Fact Check Trend":
-    #     await fact_check_trend(update, context)
-    # elif text == "👤 My Stats":
-    #     return await show_stats(update, context)
-    # else:
-    #     await update.message.reply_text("Sorry, I didn't understand that. Please select an option from the menu.")
-    #     return MAIN_MENU
-
+ 
 # implementing the /menu handle
 async def show_main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     await update.message.reply_text(
@@ -71,8 +44,6 @@ async def fact_check_input(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ]
         from perplexityClient import run_fact_check_pipeline
         await run_fact_check_pipeline(update, context, claim, trusted_sites, menu_keyboard)
-        # await show_main_menu(update, context)
-        # return MAIN_MENU
     else:
         return await handle_menu_selection(update, context)
 
@@ -97,11 +68,33 @@ async def handle_menu_selection(update: Update, context: ContextTypes.DEFAULT_TY
 
 # give suggestions to user what meal he/she can possibly eat
 async def suggest_meal(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    # TODO: implement TDEE + time of day meal suggestions
-    # 1. get calculated tdee
-    # 2. get current time from telegram
-    # 3. construct prompt for perplexity
-    await update.message.reply_text("This will suggest meals based on your TDEE and time of day.")
+    user_id = update.effective_user.id
+    profile = GetUserProfile(user_id)
+
+    if not profile:
+        await update.message.reply_text("Please set up your profile first: /profile")
+        return
+    
+    # Calculate meal context
+    meal_context = calculate_meal_budget(profile)
+    
+    # Get HPB food candidates
+    candidates = get_meal_candidates(profile, meal_context, meal_context["budget_kcal"])
+    snack_list = "\n".join([f"- {c['name']} ({c['kcal']:.0f}kcal, {c['protein']:.1f}g protein)" for c in candidates])
+    
+    # Get Perplexity recommendation
+    recommendation = await get_meal_recommendations(snack_list, profile, meal_context["meal_type"], meal_context["budget_kcal"])
+    
+    await update.message.reply_text(
+        f"🍽️ **{meal_context['meal_type'].title()}** ({meal_context['budget_kcal']}kcal):\n\n"
+        f"{recommendation}"
+    )
+
+    # include the main menu after showing
+    await update.message.reply_text(
+        "Back to main menu. Please choose an option:",
+        reply_markup=menu_keyboard
+    )
 
 # informs user his/her energy level now and what he/she can eat
 async def fix_energy(update: Update, context: ContextTypes.DEFAULT_TYPE):

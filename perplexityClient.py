@@ -193,27 +193,85 @@ async def get_snack_recommendations(snack_list: str, profile) -> str:
 
 
 
+# handlers/menu.py for suggest_meal()
+async def get_meal_recommendations(snack_list: str, profile, meal_type, budget) -> str:
+    # extract user details first, with fallbacks
+    name = profile.get("NAME", "friend") if profile else "friend"
+    age = profile.get("AGE", "unknown") if profile else "unknown"
+    sex = profile.get("SEX", "") if profile else ""
+    height = profile.get("HEIGHT", "") if profile else ""
+    weight = profile.get("WEIGHT", "") if profile else ""
+    goal = profile.get("GOAL", "") if profile else ""
+    activity_level = profile.get("ACTIVITY_LEVEL", "") if profile else ""
+    diet_style = profile.get("DIET_STYLE", "") if profile else ""
+    allergies = profile.get("ALLERGIES", "") if profile else ""
+    bmr = profile.get("BMR", "") if profile else ""
+    tdee = profile.get("TDEE", "") if profile else ""
+    slump_check = profile.get("SLUMP_CHECK", "") if profile else ""
+    morning_kick = profile.get("MORNING_KICK", "") if profile else ""
+    hydration = profile.get("HYDRATION_CHECK", "") if profile else ""
 
+    # meal rules
+    if meal_type == "breakfast":
+        rules = """BREAKFAST ONLY: Kaya toast, eggs, porridge, cereal, fruits, milk, yoghurt, kopi/teh. 
+NO satay, Thai milk tea, laksa, desserts, heavy hawker food."""
+    elif meal_type == "lunch":
+        rules = "LUNCH: Rice/noodles + protein (chicken/fish) + vegetables."
+    elif meal_type == "dinner":
+        rules = "DINNER: Balanced rice/noodles + protein + veg/soup."
+    else:  # snack
+        rules = "SNACK: Nuts, yoghurt, fruits, light bread."
 
+    meal_prompt = """
+    You are a friendly, conversational nutrition coach helping {name} with these details:
+    - Age: {age}, Sex: {sex}, Height: {height} cm, Weight: {weight} kg
+    - Goal: {goal}, Activity Level: {activity_level}, Diet: {diet_style}
+    - Allergies: {allergies}, BMR: {bmr}, TDEE: {tdee}
+    - Afternoon energy crash: {slump_check}
+    - Morning feeling: {morning_kick}
+    - Daily water intake in liters: {hydration}
 
+    **{rules}**
 
-# catch response from telebot and GET req from perplexity
-# async def get_perplexity_response(query: str, chat_history: list=None):
-#     if chat_history is None:
-#         chat_history = []
+    From the following HPB Singapore foods, create exactly 1 balanced {meal_type} meal with approximately {budget} kcal total.
 
-#     messages = chat_history + [{
-#         "role": "user",
-#         "content": query
-#     }]
+    Guidelines:
+    - Prioritize Singapore hawker-style foods with practical portion sizes.
+    - Avoid foods that conflict with {diet_style} and {allergies}.
+    - Use clear, plain text and emojis only.
+    - Do NOT include meal plans, questions, citations, bold, or italics.
+    - Provide concise nutritional values and a short, personalized explanation.
 
-#     try:
-#         response = client.chat.completions.create(
-#             model="sonar",
-#             messages=messages,
-#             stream=False
-#         )
-#         return response.choices[0].message.content
-#     except Exception as e:
-#         print(f"Error calling Perplexity API: {e}")
-#         return "Sorry, I couldn't generate a response right now."
+    Format your response EXACTLY like this:
+
+    [Food1] + [Food2] + [Food3] = {budget} kcal  
+    ✅ Protein: [g]g | Carbs: [g]g | Fat: [g]g  
+    Why it’s perfect for {goal}: [1 sentence]
+
+    Example:
+
+    Chicken rice (half portion) + steamed vegetables + clear soup = 650 kcal  
+    ✅ Protein: 35g | Carbs: 80g | Fat: 20g  
+    Balanced hawker meal tailored for muscle gain and energy stability.
+
+    Remember: NO citations, NO meal plans, NO bold or italics.
+
+    Respond now with only the numbered list as specified.
+    """.format(
+        name=name, age=age, sex=sex, height=height, weight=weight,
+        goal=goal, activity_level=activity_level, diet_style=diet_style,
+        allergies=allergies, bmr=bmr, tdee=tdee, slump_check = slump_check, 
+        morning_kick = morning_kick, hydration = hydration, snack_list = snack_list, 
+        meal_type = meal_type, budget = budget, rules=rules
+    )
+        
+    messages = [{"role": "user", "content": meal_prompt}]
+    response = await asyncio.to_thread(
+        client.chat.completions.create,
+        model="sonar-pro",
+        messages=messages,
+        temperature=0.3,
+        max_tokens=300,
+        extra_body={"include_citations": False}
+    )
+    return response.choices[0].message.content.strip()
