@@ -1,0 +1,30 @@
+﻿Food Name,"Teh siu dai"
+Description,"Local tea with condensed milk and less sugar/less sweet"
+Food Group,"Beverages"
+Food Subgroup,"Tea and related drinks"
+Edible Portion,"100%"
+Default Serving Size,"1 small cup (150ml) = 150ml"
+Alternative Serving Size(s),"1 medium cup (200ml) = 200ml"
+Source of Data,"Lab Analysis"
+Last Updated,"2023"
+
+,Per 100ml,Per Serving (150ml)
+Energy (kcal),46,69
+Protein (g),0.75,1.13
+Total Fat (g),1.64,2.46
+Saturated Fat (g),0.92,1.38
+Trans Fat (g),-,-
+Carbohydrate (g),7,10.5
+Sugar (g),6.71,10.07
+Added Sugar (g),-,-
+Dietary Fibre (g),0.9,1.35
+Sodium (mg),23,35
+Potassium (mg),-,-
+Calcium (mg),-,-
+Iron (mg),-,-
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100ml: Nutrient data reported in the column is per 100ml edible portion
+Per serving size (ml): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100ml edible portion and per 100ml serving size if edible portion is less than 100%

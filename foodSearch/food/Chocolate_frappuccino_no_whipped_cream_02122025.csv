@@ -1,0 +1,30 @@
+﻿Food Name,"Chocolate frappuccino (no whipped cream)"
+Description,"Blended iced drink made with coffee, chocolate syrup, milk and ice"
+Food Group,"Beverages"
+Food Subgroup,"Speciality coffee"
+Edible Portion,"100%"
+Default Serving Size,"1 medium cup (400ml) = 400ml"
+Alternative Serving Size(s),"1 large cup (500ml) = 500ml"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100ml,Per Serving (400ml)
+Energy (kcal),83,332
+Protein (g),2.35,9.4
+Total Fat (g),4.69,18.76
+Saturated Fat (g),2.93,11.72
+Trans Fat (g),-,-
+Carbohydrate (g),8.39,33.56
+Sugar (g),7.6,30.4
+Added Sugar (g),-,-
+Dietary Fibre (g),0.09,0.36
+Sodium (mg),28,112
+Potassium (mg),-,-
+Calcium (mg),70,280
+Iron (mg),0.25,1
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100ml: Nutrient data reported in the column is per 100ml edible portion
+Per serving size (ml): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100ml edible portion and per 100ml serving size if edible portion is less than 100%

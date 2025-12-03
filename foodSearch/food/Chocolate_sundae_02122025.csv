@@ -1,0 +1,30 @@
+﻿Food Name,"Chocolate sundae"
+Description,"Soft serve ice cream drizzled with hot chocolate fudge sauce"
+Food Group,"Desserts"
+Food Subgroup,"Ice confections"
+Edible Portion,"100%"
+Default Serving Size,"1 cup(s) = 165g"
+Alternative Serving Size(s),"-"
+Source of Data,"NIP"
+Last Updated,"2025"
+
+,Per 100g,Per Serving (165g)
+Energy (kcal),202,333
+Protein (g),4,6.6
+Total Fat (g),6.06,10
+Saturated Fat (g),3.7,6.11
+Trans Fat (g),-,-
+Carbohydrate (g),33.33,54.99
+Sugar (g),30.2,49.83
+Added Sugar (g),-,-
+Dietary Fibre (g),3.64,6.01
+Sodium (mg),109,180
+Potassium (mg),-,-
+Calcium (mg),98,162
+Iron (mg),0.6,0.99
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

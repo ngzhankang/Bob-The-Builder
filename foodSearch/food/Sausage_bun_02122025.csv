@@ -1,0 +1,30 @@
+﻿Food Name,"Sausage bun"
+Description,"Bun filled with pork sausage"
+Food Group,"Grains and staples"
+Food Subgroup,"Bread-based dishes"
+Edible Portion,"100%"
+Default Serving Size,"1 whole = 70g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100g,Per Serving (70g)
+Energy (kcal),284,199
+Protein (g),11.2,7.84
+Total Fat (g),11.5,8.05
+Saturated Fat (g),4.5,3.15
+Trans Fat (g),0,0
+Carbohydrate (g),33.9,23.73
+Sugar (g),0,0
+Added Sugar (g),-,-
+Dietary Fibre (g),1.4,0.98
+Sodium (mg),525,368
+Potassium (mg),-,-
+Calcium (mg),69,48
+Iron (mg),1.5,1.05
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

@@ -1,0 +1,30 @@
+﻿Food Name,"Steamed mantou"
+Description,"Steamed bun made from flour and yeast, from imperial herbal restaurant"
+Food Group,"Grains and staples"
+Food Subgroup,"Breads and flatbreads"
+Edible Portion,"100%"
+Default Serving Size,"1 piece(s) = 52g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100g,Per Serving (52g)
+Energy (kcal),254,132
+Protein (g),5.1,2.65
+Total Fat (g),2.6,1.35
+Saturated Fat (g),0.99,0.51
+Trans Fat (g),-,-
+Carbohydrate (g),52.8,27.46
+Sugar (g),9.2,4.78
+Added Sugar (g),-,-
+Dietary Fibre (g),2,1.04
+Sodium (mg),132,69
+Potassium (mg),-,-
+Calcium (mg),37,19
+Iron (mg),0.4,0.21
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

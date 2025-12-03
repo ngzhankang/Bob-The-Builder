@@ -1,0 +1,30 @@
+﻿Food Name,"Chocolate tart"
+Description,"Buttery pastry shell filled with rich chocolate ganache or chocolate custard"
+Food Group,"Snacks"
+Food Subgroup,"Pies and pastries"
+Edible Portion,"100%"
+Default Serving Size,"1 piece(s) = 90g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2018"
+
+,Per 100g,Per Serving (90g)
+Energy (kcal),432,389
+Protein (g),7.6,6.84
+Total Fat (g),29.52,26.57
+Saturated Fat (g),18.51,16.66
+Trans Fat (g),0.25,0.23
+Carbohydrate (g),33.9,30.51
+Sugar (g),20.4,18.36
+Added Sugar (g),-,-
+Dietary Fibre (g),3.3,2.97
+Sodium (mg),59,53
+Potassium (mg),-,-
+Calcium (mg),70,63
+Iron (mg),3.66,3.29
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

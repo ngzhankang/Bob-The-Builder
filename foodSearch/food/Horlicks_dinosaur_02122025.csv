@@ -1,0 +1,30 @@
+﻿Food Name,"Horlicks dinosaur"
+Description,"A cold, malted drink mixed with condensed milk, topped with a heaped tablespoon of Horlick powder"
+Food Group,"Beverages"
+Food Subgroup,"Malted and chocolate drinks"
+Edible Portion,"100%"
+Default Serving Size,"1 glass (450ml) = 450ml"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2023"
+
+,Per 100ml,Per Serving (450ml)
+Energy (kcal),73,329
+Protein (g),2.05,9.23
+Total Fat (g),0.89,4.01
+Saturated Fat (g),0.37,1.67
+Trans Fat (g),-,-
+Carbohydrate (g),14.06,63.27
+Sugar (g),8.81,39.65
+Added Sugar (g),-,-
+Dietary Fibre (g),0.37,1.67
+Sodium (mg),86,387
+Potassium (mg),-,-
+Calcium (mg),-,-
+Iron (mg),-,-
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100ml: Nutrient data reported in the column is per 100ml edible portion
+Per serving size (ml): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100ml edible portion and per 100ml serving size if edible portion is less than 100%

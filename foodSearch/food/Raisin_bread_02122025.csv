@@ -1,0 +1,30 @@
+﻿Food Name,"Raisin bread"
+Description,"-"
+Food Group,"Carb-based"
+Food Subgroup,"Bread/dough-based dishes"
+Edible Portion,"100%"
+Default Serving Size,"1 slice(s) = 40g"
+Alternative Serving Size(s),"-"
+Source of Data,"-"
+Last Updated,"-"
+
+,Per 100g,Per Serving (40g)
+Energy (kcal),278.5,111
+Protein (g),9.6,3.84
+Total Fat (g),4.05,1.62
+Saturated Fat (g),2.05,0.82
+Trans Fat (g),0,0
+Carbohydrate (g),52,20.8
+Sugar (g),14.6,5.84
+Added Sugar (g),0,0
+Dietary Fibre (g),5.9,2.36
+Sodium (mg),323,129
+Potassium (mg),-,-
+Calcium (mg),248.5,99
+Iron (mg),3.95,1.58
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

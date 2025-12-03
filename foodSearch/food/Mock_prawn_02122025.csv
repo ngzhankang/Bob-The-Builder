@@ -1,0 +1,30 @@
+﻿Food Name,"Mock prawn"
+Description,"Deep-fried gluten, soybean flour and soy protein"
+Food Group,"Meat and alternatives"
+Food Subgroup,"Alternative meats"
+Edible Portion,"100%"
+Default Serving Size,"1 scoop(s) (serving spoon) = 100g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100g,Per Serving (100g)
+Energy (kcal),67,67
+Protein (g),0.4,0.4
+Total Fat (g),4.3,4.3
+Saturated Fat (g),1.56,1.56
+Trans Fat (g),0,0
+Carbohydrate (g),6.7,6.7
+Sugar (g),0.9,0.9
+Added Sugar (g),-,-
+Dietary Fibre (g),3.1,3.1
+Sodium (mg),799,799
+Potassium (mg),-,-
+Calcium (mg),9,9
+Iron (mg),0.3,0.3
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

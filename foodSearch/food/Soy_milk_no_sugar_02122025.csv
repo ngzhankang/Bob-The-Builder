@@ -1,0 +1,30 @@
+﻿Food Name,"Soy milk (no sugar)"
+Description,"Beverage made from soaked soya beans and water"
+Food Group,"Beverages"
+Food Subgroup,"Soy milk"
+Edible Portion,"100%"
+Default Serving Size,"1 glass (470ml) = 470ml"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100ml,Per Serving (470ml)
+Energy (kcal),33,155
+Protein (g),2.7,12.69
+Total Fat (g),2,9.4
+Saturated Fat (g),0.26,1.22
+Trans Fat (g),-,-
+Carbohydrate (g),1.2,5.64
+Sugar (g),1.1,5.17
+Added Sugar (g),-,-
+Dietary Fibre (g),0.8,3.76
+Sodium (mg),12,56
+Potassium (mg),-,-
+Calcium (mg),10,47
+Iron (mg),0.4,1.88
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100ml: Nutrient data reported in the column is per 100ml edible portion
+Per serving size (ml): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100ml edible portion and per 100ml serving size if edible portion is less than 100%

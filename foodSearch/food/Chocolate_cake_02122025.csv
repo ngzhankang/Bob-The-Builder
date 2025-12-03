@@ -1,0 +1,30 @@
+﻿Food Name,"Chocolate cake"
+Description,"Rich, moist cake made with cocoa powder and chocolate"
+Food Group,"Desserts"
+Food Subgroup,"Cakes"
+Edible Portion,"100%"
+Default Serving Size,"1 slice(s) = 55g"
+Alternative Serving Size(s),"-"
+Source of Data,"Borrowed"
+Last Updated,"2025"
+
+,Per 100g,Per Serving (55g)
+Energy (kcal),367,202
+Protein (g),6.9,3.8
+Total Fat (g),17.9,9.84
+Saturated Fat (g),11.1,6.11
+Trans Fat (g),0.2,0.11
+Carbohydrate (g),44.9,24.7
+Sugar (g),19.4,10.67
+Added Sugar (g),-,-
+Dietary Fibre (g),1.5,0.83
+Sodium (mg),500,275
+Potassium (mg),-,-
+Calcium (mg),77,42
+Iron (mg),1.2,0.66
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

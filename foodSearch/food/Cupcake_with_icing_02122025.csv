@@ -1,0 +1,30 @@
+﻿Food Name,"Cupcake with icing"
+Description,"Plain cake topped with icing"
+Food Group,"Desserts"
+Food Subgroup,"Cakes"
+Edible Portion,"100%"
+Default Serving Size,"1 whole = 40g"
+Alternative Serving Size(s),"-"
+Source of Data,"Borrowed"
+Last Updated,"2025"
+
+,Per 100g,Per Serving (40g)
+Energy (kcal),372,149
+Protein (g),4.7,1.88
+Total Fat (g),14.9,5.96
+Saturated Fat (g),6.4,2.56
+Trans Fat (g),0,0
+Carbohydrate (g),55.9,22.36
+Sugar (g),36.5,14.6
+Added Sugar (g),-,-
+Dietary Fibre (g),1.1,0.44
+Sodium (mg),370,148
+Potassium (mg),-,-
+Calcium (mg),4,2
+Iron (mg),0.5,0.2
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

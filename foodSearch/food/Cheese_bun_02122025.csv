@@ -1,0 +1,30 @@
+﻿Food Name,"Cheese bun"
+Description,"Soft bread roll filled with cheese or cheese-flavoured filling"
+Food Group,"Grains and staples"
+Food Subgroup,"Bread-based dishes"
+Edible Portion,"100%"
+Default Serving Size,"1 whole = 56g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2010"
+
+,Per 100g,Per Serving (56g)
+Energy (kcal),357,200
+Protein (g),11,6.16
+Total Fat (g),13.7,7.67
+Saturated Fat (g),7.52,4.21
+Trans Fat (g),0.06,0.03
+Carbohydrate (g),47.5,26.6
+Sugar (g),6.3,3.53
+Added Sugar (g),-,-
+Dietary Fibre (g),2.2,1.23
+Sodium (mg),474,265
+Potassium (mg),-,-
+Calcium (mg),154,86
+Iron (mg),0.6,0.34
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

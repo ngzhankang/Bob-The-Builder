@@ -1,0 +1,30 @@
+﻿Food Name,"White bread with butter"
+Description,"-"
+Food Group,"Carb-based"
+Food Subgroup,"Bread/dough-based dishes"
+Edible Portion,"100%"
+Default Serving Size,"1 slice(s) = 29g"
+Alternative Serving Size(s),"-"
+Source of Data,"-"
+Last Updated,"-"
+
+,Per 100g,Per Serving (29g)
+Energy (kcal),340.37,99
+Protein (g),8.1,2.35
+Total Fat (g),16.86,4.89
+Saturated Fat (g),10.63,3.08
+Trans Fat (g),0.49,0.14
+Carbohydrate (g),40.48,11.74
+Sugar (g),4.16,1.21
+Added Sugar (g),-,-
+Dietary Fibre (g),2.09,0.61
+Sodium (mg),367.2,106
+Potassium (mg),-,-
+Calcium (mg),179.65,52
+Iron (mg),4.49,1.3
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

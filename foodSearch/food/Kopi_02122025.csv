@@ -1,0 +1,30 @@
+﻿Food Name,"Kopi"
+Description,"Traditional coffee with condensed milk and evaporated milk"
+Food Group,"Beverages"
+Food Subgroup,"Coffee"
+Edible Portion,"100%"
+Default Serving Size,"1 small cup (150ml) = 150ml"
+Alternative Serving Size(s),"1 medium cup (200ml) = 200ml"
+Source of Data,"Lab Analysis"
+Last Updated,"2023"
+
+,Per 100ml,Per Serving (150ml)
+Energy (kcal),64,96
+Protein (g),0.74,1.11
+Total Fat (g),2.01,3.01
+Saturated Fat (g),1.05,1.58
+Trans Fat (g),-,-
+Carbohydrate (g),10.67,16.01
+Sugar (g),8.08,12.12
+Added Sugar (g),-,-
+Dietary Fibre (g),0.18,0.27
+Sodium (mg),26,39
+Potassium (mg),-,-
+Calcium (mg),-,-
+Iron (mg),-,-
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100ml: Nutrient data reported in the column is per 100ml edible portion
+Per serving size (ml): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100ml edible portion and per 100ml serving size if edible portion is less than 100%

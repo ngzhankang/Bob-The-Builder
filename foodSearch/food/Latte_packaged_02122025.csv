@@ -1,0 +1,30 @@
+﻿Food Name,"Latte (packaged)"
+Description,"Ready-to-drink coffee beverage with milk and sugar"
+Food Group,"Beverages"
+Food Subgroup,"Coffee"
+Edible Portion,"100%"
+Default Serving Size,"1 can = 240ml"
+Alternative Serving Size(s),"1 bottle = 500ml"
+Source of Data,"NIP"
+Last Updated,"2025"
+
+,Per 100ml,Per Serving (240ml)
+Energy (kcal),49,118
+Protein (g),1.37,3.29
+Total Fat (g),1.13,2.71
+Saturated Fat (g),0.74,1.78
+Trans Fat (g),0.23,0.55
+Carbohydrate (g),8.39,20.14
+Sugar (g),6.84,16.42
+Added Sugar (g),-,-
+Dietary Fibre (g),0.09,0.22
+Sodium (mg),44,106
+Potassium (mg),-,-
+Calcium (mg),15,36
+Iron (mg),0,0
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100ml: Nutrient data reported in the column is per 100ml edible portion
+Per serving size (ml): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100ml edible portion and per 100ml serving size if edible portion is less than 100%

@@ -1,0 +1,30 @@
+﻿Food Name,"Chicken banh mi"
+Description,"Vietnamese sandwich with grilled chicken, pickled vegetables and herbs in baguette"
+Food Group,"Grains and staples"
+Food Subgroup,"Bread-based dishes"
+Edible Portion,"100%"
+Default Serving Size,"1 whole = 212g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2018"
+
+,Per 100g,Per Serving (212g)
+Energy (kcal),185,392
+Protein (g),9.4,19.93
+Total Fat (g),9.25,19.61
+Saturated Fat (g),2.84,6.02
+Trans Fat (g),0.03,0.06
+Carbohydrate (g),16,33.92
+Sugar (g),1.8,3.82
+Added Sugar (g),-,-
+Dietary Fibre (g),2.1,4.45
+Sodium (mg),439,931
+Potassium (mg),-,-
+Calcium (mg),24,51
+Iron (mg),1.12,2.37
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

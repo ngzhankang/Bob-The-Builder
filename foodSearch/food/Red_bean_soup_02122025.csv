@@ -1,0 +1,30 @@
+﻿Food Name,"Red bean soup"
+Description,"Sweet dessert soup made from boiling red beans in water and sugar"
+Food Group,"Desserts"
+Food Subgroup,"Soup desserts"
+Edible Portion,"100%"
+Default Serving Size,"1 bowl(s) = 350g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2023"
+
+,Per 100g,Per Serving (350g)
+Energy (kcal),75,263
+Protein (g),2.44,8.54
+Total Fat (g),0.18,0.63
+Saturated Fat (g),0.01,0.04
+Trans Fat (g),-,-
+Carbohydrate (g),16.44,57.54
+Sugar (g),8.44,29.54
+Added Sugar (g),-,-
+Dietary Fibre (g),2.87,10.05
+Sodium (mg),4,14
+Potassium (mg),-,-
+Calcium (mg),-,-
+Iron (mg),-,-
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

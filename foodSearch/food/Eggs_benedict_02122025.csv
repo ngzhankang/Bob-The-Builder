@@ -1,0 +1,30 @@
+﻿Food Name,"Eggs benedict"
+Description,"Poached eggs and ham on toasted English muffin, topped with hollandaise sauce"
+Food Group,"Grains and staples"
+Food Subgroup,"Bread-based dishes"
+Edible Portion,"100%"
+Default Serving Size,"1 plate(s) = 291g"
+Alternative Serving Size(s),"-"
+Source of Data,"Lab Analysis"
+Last Updated,"2018"
+
+,Per 100g,Per Serving (291g)
+Energy (kcal),230,669
+Protein (g),10.9,31.72
+Total Fat (g),16.97,49.38
+Saturated Fat (g),8.14,23.69
+Trans Fat (g),0.06,0.17
+Carbohydrate (g),8.4,24.44
+Sugar (g),1.6,4.66
+Added Sugar (g),-,-
+Dietary Fibre (g),1.4,4.07
+Sodium (mg),349,1016
+Potassium (mg),-,-
+Calcium (mg),85,247
+Iron (mg),1.18,3.43
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100g: Nutrient data reported in the column is per 100g edible portion
+Per serving size (g): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100g edible portion and per 100g serving size if edible portion is less than 100%

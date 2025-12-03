@@ -1,0 +1,30 @@
+﻿Food Name,"Multigrain cereal drink"
+Description,"Beverage made from blend of different grains"
+Food Group,"Beverages"
+Food Subgroup,"Cereal drinks"
+Edible Portion,"100%"
+Default Serving Size,"1 cup (200ml) = 200ml"
+Alternative Serving Size(s),"-"
+Source of Data,"NIP"
+Last Updated,"2025"
+
+,Per 100ml,Per Serving (200ml)
+Energy (kcal),62,124
+Protein (g),1.55,3.1
+Total Fat (g),1.37,2.74
+Saturated Fat (g),0.19,0.38
+Trans Fat (g),0,0
+Carbohydrate (g),11.02,22.04
+Sugar (g),4.94,9.88
+Added Sugar (g),-,-
+Dietary Fibre (g),1.15,2.3
+Sodium (mg),9,18
+Potassium (mg),-,-
+Calcium (mg),0,0
+Iron (mg),0,0
+
+Trace: Nutrient is present in quantities too low to be measured with acceptable precision (i.e. below the minimum detection limit)
+Dash (-): No data is available for this nutrient
+Per 100ml: Nutrient data reported in the column is per 100ml edible portion
+Per serving size (ml): Nutrient data reported in the column is calculated based on total weight of edible and non-edible portions (e.g. includes weight of bones and herbs)
+• There will be differences in reported nutrient data per 100ml edible portion and per 100ml serving size if edible portion is less than 100%
