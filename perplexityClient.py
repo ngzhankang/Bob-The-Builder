@@ -57,6 +57,9 @@ async def run_fact_check_pipeline(update: Update, context: ContextTypes.DEFAULT_
     allergies = profile.get("ALLERGIES", "") if profile else ""
     bmr = profile.get("BMR", "") if profile else ""
     tdee = profile.get("TDEE", "") if profile else ""
+    slump_check = profile.get("SLUMP_CHECK", "") if profile else ""
+    morning_kick = profile.get("MORNIN_KICK", "") if profile else ""
+    hydration = profile.get("HYDRATION_CHECK", "") if profile else ""
 
     # tokenize
     tokens = tokenize_and_filter(claim)
@@ -74,6 +77,9 @@ async def run_fact_check_pipeline(update: Update, context: ContextTypes.DEFAULT_
         - Age: {age}. Sex: {sex}, Height: {height}cm, Weight: {weight}kg
         - Goal: {goal}, Activity Level: {activity_level}, Diet: {diet_style}
         - Allergies: {allergies}, BMR: {bmr}, TDEE: {tdee}
+        - User often feel a 'crash' or low energy in the mid-afternoon? (around 2-4 PM): {slump_check}
+        - User feels {morning_kick} when he/she wakes up.
+        - Daily plain water consumption in LITRES: {hydration} 
 
         **3 SENTENCES MAX.**Fact-check this claim using ONLY the search query. Verdict on "{claim}" using "{search_query}". NO questions. NO meal suggestions. NO citations. Plain text + emojis only. NO bold/italics.:
         1. Verdict ✅❌ + 1 sentence why
@@ -88,7 +94,9 @@ async def run_fact_check_pipeline(update: Update, context: ContextTypes.DEFAULT_
     """.format(
         name=name, age=age, sex=sex, height=height, weight=weight,
         goal=goal, activity_level=activity_level, diet_style=diet_style,
-        allergies=allergies, bmr=bmr, tdee=tdee, claim=claim, search_query=search_query
+        allergies=allergies, bmr=bmr, tdee=tdee, slump_check = slump_check, 
+        morning_kick = morning_kick, hydration = hydration,
+        claim=claim, search_query=search_query
     )
 
     factcheck_messages = [

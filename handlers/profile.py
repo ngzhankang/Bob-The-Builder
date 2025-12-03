@@ -10,6 +10,8 @@ SEX_OPTIONS = [["male", "female"]]
 ACTIVITY_OPTIONS = [["sedentary", "light"], ["moderate", "active", "very active"]]
 GOAL_OPTIONS = [["fat loss", "muscle gain"], ["better energy", "general health"]]
 DIET_OPTIONS = [["no preference", "vegetarian"], ["vegan", "low-carb", "halal"]]
+SLUMP_CHECK_OPTIONS = [["YES", "NO"]]
+MORNING_KICK_OPTIONS = [["groggy", "ready to go", "hungry"]]
 
 # profile setup. acts like a state machine
 def profile_handlers():
@@ -27,8 +29,10 @@ def profile_handlers():
             GOAL: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_activity)],
             ACTIVITY_LEVEL: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_diet_style)],
             DIET_STYLE: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_allergies)],
-            ALLERGIES: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_misinformation)],
-            MISINFORMATION: [MessageHandler(filters.TEXT & ~filters.COMMAND, profile_finish)],
+            ALLERGIES: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_slump_check)],
+            SLUMP_CHECK: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_morning_kick)],
+            MORNING_KICK: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_hydration_check)],
+            HYDRATION_CHECK: [MessageHandler(filters.TEXT & ~filters.COMMAND, profile_finish)],
             # MAIN_MENU:  [MessageHandler(filters.TEXT & ~filters.COMMAND, handle_menu_selection)],
             AWAITING_EDIT_CONFIRMATION:  [MessageHandler(filters.TEXT & ~filters.COMMAND, await_edit_confirmation)]
         },
@@ -233,17 +237,68 @@ async def ask_allergies(update: Update, context: ContextTypes.DEFAULT_TYPE) -> i
     )
     return ALLERGIES
 
-# ask for the misinformation
-async def ask_misinformation(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+# ask for slump check
+async def ask_slump_check(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     context.user_data["ALLERGIES"] = update.message.text.strip()
+    reply_markup = ReplyKeyboardMarkup(SLUMP_CHECK_OPTIONS, one_time_keyboard=True, resize_keyboard=True)
     await update.message.reply_text(
-        "You probably see a lot of confusing trends online. What's one diet myth you're most curious about right now?"
+        "Do you often feel a 'crash' or low energy in the mid-afternoon (around 2-4PM)?",
+        reply_markup=reply_markup
     )
-    return MISINFORMATION
+    return SLUMP_CHECK
+
+# ask for morning kick
+async def ask_morning_kick(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    # check slump check
+    try:
+        slump_check = str(update.message.text.strip())
+        if slump_check not in SLUMP_CHECK_OPTIONS[0]:
+            raise ValueError
+    except ValueError:
+        await update.message.reply_text(
+            "Please choose a valid option"
+        )
+        return SLUMP_CHECK
+    
+    context.user_data["SLUMP_CHECK"] = update.message.text.strip()
+    reply_markup = ReplyKeyboardMarkup(MORNING_KICK_OPTIONS, one_time_keyboard=True, resize_keyboard=True)
+    await update.message.reply_text(
+        "How do you feel when you wake up?",
+        reply_markup=reply_markup
+    )
+    return MORNING_KICK
+
+# ask for hydration
+async def ask_hydration_check(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    # check morning kick
+    try:
+        morning_kick = str(update.message.text.strip())
+        if morning_kick not in MORNING_KICK_OPTIONS[0]:
+            raise ValueError
+    except ValueError:
+        await update.message.reply_text(
+            "Please choose a valid option"
+        )
+        return MORNING_KICK
+    
+    context.user_data["MORNING_KICK"] = update.message.text.strip()
+    await update.message.reply_text(
+        "Be honest - how much plain water do you drink a day? (In litres)"
+    )
+    return HYDRATION_CHECK
 
 # once we gather all the basic info, save it in first
 async def profile_finish(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
-    context.user_data["MISINFORMATION"] = update.message.text.strip()
+    # check if water consumption is based
+    try:
+        hydration = float(update.message.text.strip())
+        if not (0 <= hydration <= 6):
+            raise ValueError
+    except ValueError:
+        await update.message.reply_text("Please enter a realistic water consumption volume in litres, e.g. 3.3")
+        return HYDRATION_CHECK
+
+    context.user_data["HYDRATION_CHECK"] = hydration
 
     # calculate basal metabolic rate using Mifflin St-Jeor Equation
     # see https://reference.medscape.com/calculator/846/mifflin-st-jeor-equation
@@ -275,7 +330,9 @@ async def profile_finish(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
         "ACTIVITY_LEVEL": context.user_data["ACTIVITY_LEVEL"],
         "DIET_STYLE": context.user_data["DIET_STYLE"],
         "ALLERGIES": context.user_data["ALLERGIES"],
-        "MISINFORMATION": context.user_data["MISINFORMATION"],
+        "SLUMP_CHECK": context.user_data["SLUMP_CHECK"],
+        "MORNING_KICK": context.user_data["MORNING_KICK"],
+        "HYDRATION_CHECK": context.user_data["HYDRATION_CHECK"],
         "BMR": bmr,
         "TDEE": tdee,
     }

@@ -1,16 +1,18 @@
 {
     "859694747": {
-        "NAME": "Bobby",
-        "AGE": 23,
+        "NAME": "bobby",
+        "AGE": 22,
         "SEX": "male",
         "HEIGHT": 166.0,
-        "WEIGHT": 57.7,
-        "GOAL": "muscle gain",
-        "ACTIVITY_LEVEL": "sedentary",
+        "WEIGHT": 60.0,
+        "GOAL": "general health",
+        "ACTIVITY_LEVEL": "active",
         "DIET_STYLE": "no preference",
-        "ALLERGIES": "Na",
-        "MISINFORMATION": "Na",
-        "BMR": 1504.5,
-        "TDEE": 1805.3999999999999
+        "ALLERGIES": "na",
+        "SLUMP_CHECK": "YES",
+        "MORNING_KICK": "groggy",
+        "HYDRATION_CHECK": 3.5,
+        "BMR": 1532.5,
+        "TDEE": 2375.375
     }
 }
