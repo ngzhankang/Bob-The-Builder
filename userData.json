@@ -12,5 +12,19 @@
         "MISINFORMATION": "Na",
         "BMR": 1504.5,
         "TDEE": 1805.3999999999999
+    },
+    "664709563": {
+        "NAME": "Bob",
+        "AGE": 69,
+        "SEX": "male",
+        "HEIGHT": 169.0,
+        "WEIGHT": 69.0,
+        "GOAL": "muscle gain",
+        "ACTIVITY_LEVEL": "sedentary",
+        "DIET_STYLE": "no preference",
+        "ALLERGIES": "NA",
+        "MISINFORMATION": "Is creatine healthy?",
+        "BMR": 1406.25,
+        "TDEE": 1687.5
     }
 }

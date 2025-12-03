@@ -9,7 +9,7 @@ from telegram.ext import filters, MessageHandler, ApplicationBuilder, CommandHan
 # ./config.py
 from config import TELE_API_KEY
 
-from handlers import start, profile_handlers, menu_handlers, show_main_menu, build_food_search_conversation
+from handlers import start, profile_handlers, menu_handlers, show_main_menu, build_food_search_conversation, info
 
 # logging
 logging.basicConfig(
