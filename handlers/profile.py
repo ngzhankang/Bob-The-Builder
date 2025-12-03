@@ -259,7 +259,7 @@ async def profile_finish(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
         tdee = bmr*1.2
     elif context.user_data["ACTIVITY_LEVEL"] == 'light':
         tdee = bmr*1.375
-    elif context.user_data["ACTIVITY_LEVEL"] == 'moderate' or content.user_data["ACTIVITY_LEVEL"] == 'active':
+    elif context.user_data["ACTIVITY_LEVEL"] == 'moderate' or context.user_data["ACTIVITY_LEVEL"] == 'active':
         tdee = bmr*1.55
     else:
         tdee = bmr*1.725
