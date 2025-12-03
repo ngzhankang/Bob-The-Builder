@@ -66,7 +66,7 @@ def csv_to_dict(path_csv):
 # FOOD DATA COLLATION
 
 # loop through each csv file in food folder
-food_data = []
+food_data = {}
 for file_name in os.listdir("./food"):
 
     if file_name.endswith(".csv"):
@@ -74,13 +74,11 @@ for file_name in os.listdir("./food"):
         # get path to csv file
         file_path = os.path.join("./food", file_name)
 
-        # append results to food data
-        food_data.append(csv_to_dict(file_path))
+        # insert results to food data
+        results = csv_to_dict(file_path)
+        food_data[results["Food Name"]] = results
 
 # write food data to foodData.json
 with open("./foodData.json", "w", encoding="utf-8") as f:
 
-    # loop through each food
-    for food in food_data:
-
-        json.dump(food, f, ensure_ascii=False, indent=2)
+    json.dump(food_data, f, ensure_ascii=False, indent=2)
