@@ -1,0 +1,16 @@
+{
+    "859694747": {
+        "NAME": "Bobby",
+        "AGE": 23,
+        "SEX": "male",
+        "HEIGHT": 166.0,
+        "WEIGHT": 57.7,
+        "GOAL": "muscle gain",
+        "ACTIVITY_LEVEL": "sedentary",
+        "DIET_STYLE": "no preference",
+        "ALLERGIES": "Na",
+        "MISINFORMATION": "Na",
+        "BMR": 1504.5,
+        "TDEE": 1805.3999999999999
+    }
+}

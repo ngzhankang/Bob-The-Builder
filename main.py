@@ -9,12 +9,7 @@ from telegram.ext import filters, MessageHandler, ApplicationBuilder, CommandHan
 # ./config.py
 from config import TELE_API_KEY
 
-# ./handlers
-from handlers import start, build_profile_conversation, build_food_search_conversation
-from handlers.profile import profile_button
-
-
-# CONFIG
+from handlers import start, profile_handlers, menu_handlers, show_main_menu, build_food_search_conversation
 
 # logging
 logging.basicConfig(
@@ -29,12 +24,14 @@ def main():
 
     # initialise telegram bot
     application = ApplicationBuilder().token(TELE_API_KEY).build()
-
-    # bot command handlers
-    application.add_handler(CommandHandler('start', start))   # /start handler
-    application.add_handler(build_profile_conversation())     # /profile handler
+    application.add_handler(CommandHandler('start', start)) # /start handler
+    # application.add_handler(CommandHandler('menu', menu))   # /menu handler
+    application.add_handler(profile_handlers())   # /profile handler
     application.add_handler(build_food_search_conversation()) # /info handler
-    # application.add_handler(CallbackQueryHandler(profile_button, pattern="^profile$"))
+
+    for handler in menu_handlers():
+        application.add_handler(handler)
+    # application.add_handler(build_main_menu_conversation) # manages main menu convesations
 
     print('Bot is running...')
     application.run_polling(poll_interval=3.0)

@@ -2,6 +2,8 @@
 from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import ContextTypes
 from storeUserData import GetUserProfile
+from handlers.menu import show_main_menu
+from handlers.states import MAIN_MENU #import current state machine status
 
 # start message for first timer clickers in the bot
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -10,24 +12,21 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
     # inline button for /profile
     keyboard = [
-        ["/profile"]
+        ["/profile setup!🌹"]
     ]
     markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True, one_time_keyboard=True)
 
     # if the profile exists
     if existing:
         name = existing.get("NAME") or update.effective_user.first_name
-        await update.message.reply_text(
-            f"welcome back, {name}! 👋\n\n"
-            "dont worry, i still have your nutrition profile saved!😃\n\n"
-            "BUT just to be sureee, i need you to double check again before we proceed! welcome back again anyws! ♥️",
-            reply_markup=markup,
-        )
+        # show main menu
+        await show_main_menu(update, context)
+        return MAIN_MENU
     else:
         # creates a new one if new user
         await update.message.reply_text(
-            "♥️♥️♥️hey there and really thankeww for using me!!!\n\n"
-            "🤖🤖🤖if youre here to potentially lose weight, gain muscle, or figure how to eat healthier, you asking the right bot! but first lets get start with your nutrition profile!\n\n"
-            "let's setup your profile first - please press /profile to set up your profile!",
+            "Hello and thank you for using preachTheBot! ♥️\n\n"
+            "If youre here to potentially lose weight, gain muscle, or figure how to eat healthier, you are at the right place! But first lets get start with your nutrition profile! 💫\n\n"
+            "Please press /profile to set up your profile!",
             reply_markup=markup,
         )
