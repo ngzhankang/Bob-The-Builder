@@ -3,7 +3,8 @@ from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import ContextTypes, MessageHandler, filters, ConversationHandler, CommandHandler
 from storeUserData import GetUserProfile
 from handlers.states import *
-from perplexityClient import run_fact_check_pipeline
+from handlers.energy import diagnose_energy, get_user_snacks
+from perplexityClient import run_fact_check_pipeline, get_snack_recommendations
 
 # menu buttons for the main landing page
 MENU_BUTTONS = [
@@ -104,16 +105,47 @@ async def suggest_meal(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # informs user his/her energy level now and what he/she can eat
 async def fix_energy(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    # TODO: implement energy crisis diagnosis and snack recommendation
-    # 
-    await update.message.reply_text("This will offer energy-boosting advice tailored to you.")
+    profile = GetUserProfile(update.effective_user.id)
+
+    if not profile:
+        await update.message.reply_text("Please set up your profile with /profile first.")
+        return
+
+    issues = diagnose_energy(profile)
+
+    if "underhydrated" in issues:
+        await update.message.reply_text(
+            "You're underhydrated. Aim for at least 1.5 - 2L water today."
+        )
+
+    if "afternoon_crash" in issues:
+        user_snacks = get_user_snacks(profile)
+        snack_list = "\n".join(f"- {s['name']} ({s['kcal']:.0f} kcal, {s['protein']:.1f} g protein)" for s in user_snacks)
+        recommendations = await get_snack_recommendations(snack_list, profile)
+        await update.message.reply_text(
+            f"Your TDEE is {profile.get('TDEE', '?')} kcal. Here are some snack options for your 3 PM crash:\n\n{recommendations}"
+        )
+    
+    if "poor_morning_energy" in issues:
+        await update.message.reply_text("Groggy mornings? Try avoiding caffeine after 2 PM and heavy meals before bedtime.")
+
+    if "needs_morning_fuel" in issues:
+        await update.message.reply_text("Waking hungry? Have a protein-rich breakfast with fiber within one hour of waking.")
+
+    if not issues:
+        await update.message.reply_text("Your energy profile looks solid. Keep up the good habits!")
+        
+    # include the main menu after showing
+    await update.message.reply_text(
+        "Back to main menu. Please choose an option:",
+        reply_markup=menu_keyboard
+    )
 
 # do fact checking for users
 async def fact_check_trend(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["awaiting_fact_check"] = True
     await update.message.reply_text(
         "Please send me the diet myth or link you'd like me to fact-check.")
-    # return FACT_CHECK
 
 # show the details of the user right now. all details
 async def show_stats(update: Update, context: ContextTypes.DEFAULT_TYPE):

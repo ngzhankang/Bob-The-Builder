@@ -9,10 +9,26 @@
         "ACTIVITY_LEVEL": "active",
         "DIET_STYLE": "no preference",
         "ALLERGIES": "na",
-        "SLUMP_CHECK": "YES",
+        "SLUMP_CHECK": "yes",
         "MORNING_KICK": "groggy",
         "HYDRATION_CHECK": 3.5,
         "BMR": 1532.5,
         "TDEE": 2375.375
+    },
+    "1114718832": {
+        "NAME": "megatron",
+        "AGE": 20,
+        "SEX": "female",
+        "HEIGHT": 168.0,
+        "WEIGHT": 80.0,
+        "GOAL": "muscle gain",
+        "ACTIVITY_LEVEL": "sedentary",
+        "DIET_STYLE": "no preference",
+        "ALLERGIES": "nope",
+        "SLUMP_CHECK": "yes",
+        "MORNING_KICK": "groggy",
+        "HYDRATION_CHECK": 2.0,
+        "BMR": 1589.0,
+        "TDEE": 1906.8
     }
 }

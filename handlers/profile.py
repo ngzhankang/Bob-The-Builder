@@ -10,7 +10,7 @@ SEX_OPTIONS = [["male", "female"]]
 ACTIVITY_OPTIONS = [["sedentary", "light"], ["moderate", "active", "very active"]]
 GOAL_OPTIONS = [["fat loss", "muscle gain"], ["better energy", "general health"]]
 DIET_OPTIONS = [["no preference", "vegetarian"], ["vegan", "low-carb", "halal"]]
-SLUMP_CHECK_OPTIONS = [["YES", "NO"]]
+SLUMP_CHECK_OPTIONS = [["yes", "no"]]
 MORNING_KICK_OPTIONS = [["groggy", "ready to go", "hungry"]]
 
 # profile setup. acts like a state machine
@@ -242,7 +242,7 @@ async def ask_slump_check(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
     context.user_data["ALLERGIES"] = update.message.text.strip()
     reply_markup = ReplyKeyboardMarkup(SLUMP_CHECK_OPTIONS, one_time_keyboard=True, resize_keyboard=True)
     await update.message.reply_text(
-        "Do you often feel a 'crash' or low energy in the mid-afternoon (around 2-4PM)?",
+        "Do you often feel a 'crash' or low energy in the mid-afternoon (around 2-4PM)?\n\nThis could be an indicator of blood sugar spikes/crashes from high-sugar lunches.",
         reply_markup=reply_markup
     )
     return SLUMP_CHECK
@@ -263,7 +263,7 @@ async def ask_morning_kick(update: Update, context: ContextTypes.DEFAULT_TYPE) -
     context.user_data["SLUMP_CHECK"] = update.message.text.strip()
     reply_markup = ReplyKeyboardMarkup(MORNING_KICK_OPTIONS, one_time_keyboard=True, resize_keyboard=True)
     await update.message.reply_text(
-        "How do you feel when you wake up?",
+        "How do you feel when you wake up?\n\nThis could get me to better know your sleep quality or late-night-eating habits.",
         reply_markup=reply_markup
     )
     return MORNING_KICK
@@ -295,7 +295,7 @@ async def profile_finish(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
         if not (0 <= hydration <= 6):
             raise ValueError
     except ValueError:
-        await update.message.reply_text("Please enter a realistic water consumption volume in litres, e.g. 3.3")
+        await update.message.reply_text("Please enter a realistic water consumption volume in litres, e.g. 3.3\n\nDid you know that dehydration is the #1 silent cause of fatigue?")
         return HYDRATION_CHECK
 
     context.user_data["HYDRATION_CHECK"] = hydration
