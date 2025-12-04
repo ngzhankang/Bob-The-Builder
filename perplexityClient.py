@@ -143,6 +143,17 @@ async def get_snack_recommendations(snack_list: str, profile) -> str:
     slump_check = profile.get("SLUMP_CHECK", "") if profile else ""
     morning_kick = profile.get("MORNING_KICK", "") if profile else ""
     hydration = profile.get("HYDRATION_CHECK", "") if profile else ""
+
+    # give range for tdee
+    tdee_range = ""
+    if tdee < 1500:
+        tdee_range = "Low needs (small/sedentary)"
+    elif tdee <= 2000:
+        tdee_range = "Moderate needs (average/light activity)"
+    elif tdee <= 2500:
+        tdee_range = "High needs (active/moderate build)"
+    else:
+        tdee_range = "Very high needs (active/large build)"
     
     
     energyFix_prompt = """
@@ -153,6 +164,11 @@ async def get_snack_recommendations(snack_list: str, profile) -> str:
         - Afternoon energy crash: {slump_check}
         - Morning feeling: {morning_kick}
         - Daily water intake in liters: {hydration}
+
+        EXPLAIN THIS TO THE USER: **TDEE EXPLANATION for {name}:**
+        Your TDEE is {tdee}kcal/day - {tdee_range}.
+        This means your body burns ~{tdee} calories daily.
+        Meals/snacks are budgeted as fractions of this.
 
         From the following list of snacks, pick exactly 3 options best suited for {name}'s goals and profile to help maintain stable energy levels during the afternoon slump. Use plain text and emojis only. Do NOT include questions, meal suggestions, citations, or any markdown formatting.
 
@@ -181,7 +197,7 @@ async def get_snack_recommendations(snack_list: str, profile) -> str:
             name=name, age=age, sex=sex, height=height, weight=weight,
             goal=goal, activity_level=activity_level, diet_style=diet_style,
             allergies=allergies, bmr=bmr, tdee=tdee, slump_check = slump_check, 
-            morning_kick = morning_kick, hydration = hydration, snack_list = snack_list
+            morning_kick = morning_kick, hydration = hydration, snack_list = snack_list, tdee_range = tdee_range
         )
     
     messages = [{"role": "user", "content": energyFix_prompt}]

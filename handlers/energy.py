@@ -45,8 +45,14 @@ def diagnose_energy(profile):
 
 def get_user_snacks(profile, max_kcal=250, min_protein=8.0, max_sugar=10.0):
     allergies = [a.strip().lower() for a in profile.get("ALLERGIES", "").split(",") if a]
+    snack_groups = ["Nuts", "Yoghurt", "Fruits", "Bread", "Milk", "Cheese", "Cereal"]
     candidates = []
     for name, item in HPB_FOODS.items():
+        group = item.get("Food Group", "").lower()
+        if not any(sg.lower() in group for sg in snack_groups):
+            continue
+        if any(word in name.lower() for word in ["beef", "cuttlefish", "chicken breast", "topside"]):
+            continue
         if any(allergy in name.lower() for allergy in allergies):
             continue
         nutri = item.get("Nutritional Data", {})

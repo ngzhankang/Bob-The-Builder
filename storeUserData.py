@@ -25,6 +25,13 @@ def GetUserProfile(user_id: int):
 # delete user profile if requested
 def DeleteUserProfile(user_id: int):
     users = LoadUserData()
-    users.pop(str(user_id), None)
-    with open(USER_DATA_FILE, "W") as f:
+    if str(user_id) in users:
+        print(f"Deleting profile for user {user_id}")
+        del users[str(user_id)]
+    else:
+        print(f"No profile found for user {user_id}")
+        return
+
+    # users.pop(str(user_id), None)
+    with open(USER_DATA_FILE, "w", encoding='utf-8') as f:
         json.dump(users, f, indent=4)

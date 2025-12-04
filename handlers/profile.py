@@ -349,7 +349,7 @@ async def profile_finish(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
         "You can update this anytime with /profile."
     )
     await show_main_menu(update, context)
-    return MAIN_MENU
+    return ConversationHandler.END
 
 # display the current details of the user upon request
 async def profile_view(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
