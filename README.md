@@ -61,7 +61,9 @@ pymon main.py
 ├── main.py (to run the static hosted bot from this file)
 ├── perplexityClient.py (defines the perplexity model to be used and the engineered prompt to send to the bot)
 ├── requirements.txt    (list of dependencies)
+├── .env   (im sorry i cant share this...)
 ├── storeUserData.py    (define methods on how to extract, save, and delete user profile upon request)
 └── userData.json   (for first timers, this file will be automatically created after profiling. delete if you wanna create new user. for existing users it should store user metadata)
 
 ```
+
