@@ -7,6 +7,12 @@
 - Telegram Bot API Key
 - *Both perplexity API key and telegram bot API keys are not made know as they are store in a SECRET file. To replicate, please create a `.env` and store secrets in this project root directory.*
 
+`.env` should look like this:
+```
+TG_BOT_API_TOKEN="KEY HERE"
+PERPLEXITY_API_KEY="KEY HERE"
+```
+
 ## Installation
 1. *Create venv for workplace & activate*:
 As always, we dont want to mess up the laptop, so we create a venv for us to work in peace
@@ -66,4 +72,5 @@ pymon main.py
 └── userData.json   (for first timers, this file will be automatically created after profiling. delete if you wanna create new user. for existing users it should store user metadata)
 
 ```
+
 
